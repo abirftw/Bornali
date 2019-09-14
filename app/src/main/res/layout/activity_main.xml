@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/firstpage"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#F67280">
+    <ImageView
+        android:id="@+id/profilePhoto"
+        android:layout_width="300dp"
+        android:layout_height="135dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/defaultprofilephoto"
+ />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="123dp"
+        android:layout_height="75dp"
+        android:layout_gravity="right"
+        android:layout_below="@+id/profilePhoto"
+        android:background="#A32CC4"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Upload Profile Photo"
+        android:textSize="18dp"
+        />
+    ///Name
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/upload"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#BC3232"
+        android:textStyle="bold"
+        android:text="Name"
+        android:textSize="35dp" />
+
+    <EditText
+        android:id="@+id/textName"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/upload"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="14dp" />
+
+    ///Age
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#BC3232"
+        android:textStyle="bold"
+        android:text="Age"
+        android:textSize="35dp" />
+
+    <EditText
+        android:id="@+id/textAge"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/textName"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="14dp" />
+
+    ///Gender
+    <TextView
+        android:id="@+id/gender"
+        android:layout_below="@+id/age"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#BC3232"
+        android:textStyle="bold"
+        android:text="Gender"
+        android:textSize="35dp" />
+    <RadioGroup
+        android:id="@+id/radioGrp"
+        android:layout_below="@+id/age"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="140dp"
+        >
+        <RadioButton
+            android:id="@+id/radioM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:checked="false"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:text="Male"
+            />
+        <RadioButton
+            android:id="@+id/radioF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:checked="false"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:text="Female"
+            />
+    </RadioGroup>
+
+
+    ///Save
+    <Button
+        android:id="@+id/savebutton"
+        android:layout_below="@+id/radioGrp"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="25dp"
+        android:layout_centerInParent="true"
+        android:background="#A32CC4"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Save"
+        android:textSize="18dp"
+        />
+    ///NextPage
+    <Button
+        android:id="@+id/startbutton"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="550dp"
+       android:background="#A32CC4"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Next"
+        android:textSize="18dp"
+        />
+</RelativeLayout>

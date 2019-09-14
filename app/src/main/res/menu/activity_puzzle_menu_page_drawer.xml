@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Puzzle">
+        <menu>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_levelOne"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Level One" />
+        <item
+            android:id="@+id/nav_levelTwo"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Level Two" />
+        <item
+            android:id="@+id/nav_levelThree"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Level Three" />
+        <item
+            android:id="@+id/nav_levelFour"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Level Four" />
+    </group>
+        </menu>
+    </item>
+<!--
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_pets_black_24dp"
+                android:title="Level Five" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_pets_black_24dp"
+                android:title="Level Six" />
+        </menu>
+    </item>
+-->
+
+</menu>
