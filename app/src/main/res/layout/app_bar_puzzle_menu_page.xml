@@ -24,11 +24,12 @@
 
     <ImageButton
         android:id="@+id/LevelOneButton"
-        android:layout_below="@+id/toolbar"
         android:layout_width="250dp"
         android:layout_height="230dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/samplelevelone"  />
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/samplelevelone" />
     <TextView
         android:id="@+id/PresentLevelText"
         android:layout_below="@+id/LevelOneButton"
@@ -40,7 +41,22 @@
         android:textColor="#BC3232"
         android:textStyle="bold"
         android:text="Level One"
+        android:fontFamily="@font/risque_regular"
         android:textSize="35dp" />
+    ///Back
+    <Button
+        android:id="@+id/backbuttonPuzzleMenu"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/backbutton"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Back"
+        android:textSize="20dp"
+        />
 
     <include layout="@layout/content_puzzle_menu_page" />
 
