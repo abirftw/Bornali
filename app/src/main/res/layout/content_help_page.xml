@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".HelpPage"
+    tools:showIn="@layout/activity_help_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#42f5da">
+
+        <Button
+            android:id="@+id/helpPageMomBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/rsz_1rsz_mom"
+            android:text="@string/helpPage_momBtn"
+            android:layout_marginHorizontal="50dp"/>
+
+        <Button
+            android:id="@+id/helpPageFoodBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/rsz_1food"
+            android:layout_marginHorizontal="50dp"
+            android:text="@string/helpPage_foodBtn" />
+
+        <Button
+            android:id="@+id/helpPageWaterBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:drawableTop="@drawable/rsz_water"
+            android:text="@string/helpPage_waterBtn" />
+        <Button
+            android:id="@+id/helpPageCaretakerBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/helpPage_caretakerBtn"
+            android:layout_marginHorizontal="50dp"
+            android:drawableTop="@drawable/rsz_caretaker"/>
+        <Button
+            android:id="@+id/helpPagetoiletBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/helpPage_toiletBtn"
+            android:layout_marginHorizontal="50dp"
+            android:drawableTop="@drawable/rsz_1toilet"/>
+        <Button
+            android:id="@+id/helpPagesleepBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:text="@string/helpPage_sleepBtn"
+            android:drawableTop="@drawable/rsz_sleep"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

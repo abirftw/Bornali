@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".HomePage"
+    tools:showIn="@layout/app_bar_home_page"
+    android:background="#eceff1">
+
+    <Button
+        android:id="@+id/helpBtnId1"
+        android:layout_width="305dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:background="#42f5da"
+        android:text="Help"
+        android:textColor="#b03864"
+        android:textSize="100dp" />
+
+    <Button
+        android:id="@+id/puzzleBtnId1"
+        android:layout_width="305dp"
+        android:layout_height="185dp"
+        android:layout_below="@id/helpBtnId1"
+        android:layout_marginLeft="60dp"
+        android:layout_marginVertical="10dp"
+        android:background="#de7878"
+        android:drawableTop="@drawable/puzzle11"
+        android:text="Puzzle"
+        android:textColor="#fff200"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/flashCardBtnId1"
+        android:layout_width="305dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/puzzleBtnId1"
+        android:layout_marginLeft="60dp"
+        android:background="#81c784"
+        android:drawableTop="@drawable/flash23"
+        android:text="Flash Card"
+        android:textColor="#a249a4"
+        android:textSize="30dp" />
+</RelativeLayout>
