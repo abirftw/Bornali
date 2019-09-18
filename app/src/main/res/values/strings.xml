@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Bornali</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Bornali</string>
+    <string name="nav_header_subtitle">csedu24_24_63_64</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_tools">Settings</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_statistics">Statistics</string>
+    <string name="title_activity_help">helpActivity</string>
+    <string name="title_activity_help_page">helpPage</string>
+
+
+    <string name="helpPage_momBtn">Mom</string>
+    <string name="helpPage_foodBtn">Food</string>
+    <string name="helpPage_waterBtn">Water</string>
+    <string name="helpPage_toiletBtn">Toilet</string>
+    <string name="helpPage_caretakerBtn">Caretaker</string>
+    <string name="helpPage_sleepBtn">Sleep</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
 </resources>
