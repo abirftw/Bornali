@@ -49,6 +49,14 @@ public class HomePage extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Button helpBtnId = findViewById(R.id.helpBtnId1) ;
+        Button cardBtn = findViewById(R.id.flashCardBtnId1);
+        cardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this,Cards.class) ;
+                startActivity(intent);
+            }
+        });
         helpBtnId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

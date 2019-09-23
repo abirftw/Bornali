@@ -24,6 +24,10 @@
             android:label="@string/title_activity_help_page"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".Cards"
+            android:label="Cards"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
     </application>
 
 </manifest>
