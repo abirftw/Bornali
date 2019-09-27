@@ -32,14 +32,11 @@ public class HomePage extends AppCompatActivity
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        try {
+            getSupportActionBar().setTitle(R.string.app_name);
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,20 +44,11 @@ public class HomePage extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-        Button helpBtnId = findViewById(R.id.helpBtnId1) ;
         Button cardBtn = findViewById(R.id.flashCardBtnId1);
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomePage.this,Cards.class) ;
-                startActivity(intent);
-            }
-        });
-        helpBtnId.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this,HelpPage.class) ;
                 startActivity(intent);
             }
         });
@@ -91,8 +79,9 @@ public class HomePage extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_help) {
+            Intent intent = new Intent(HomePage.this,HelpPage.class) ;
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

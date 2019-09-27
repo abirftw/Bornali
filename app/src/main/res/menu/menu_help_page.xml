@@ -1,7 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.sc4ever.bornali.HelpPage">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_help"
+        android:title="@string/help_action"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_help"
+        />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
