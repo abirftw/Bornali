@@ -29,5 +29,7 @@
     <string name="menu_send">Send</string>
 
     <string name="help_action">HELP</string>
+    <string name="play_action">Play</string>
+    <string name="card_action">Cards</string>
 
 </resources>

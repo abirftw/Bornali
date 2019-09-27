@@ -9,6 +9,6 @@ public class Cards extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.card_activity);
+        setContentView(R.layout.activity_cards);
     }
 }
