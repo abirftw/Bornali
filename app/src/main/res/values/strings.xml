@@ -30,6 +30,6 @@
 
     <string name="help_action">HELP</string>
     <string name="play_action">Play</string>
-    <string name="card_action">Cards</string>
+    <string name="card_action">Learn</string>
 
 </resources>

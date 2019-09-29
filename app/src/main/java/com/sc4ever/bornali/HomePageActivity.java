@@ -3,9 +3,6 @@ package com.sc4ever.bornali;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -23,7 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
 
-public class HomePage extends AppCompatActivity
+public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -48,7 +45,7 @@ public class HomePage extends AppCompatActivity
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this,Cards.class) ;
+                Intent intent = new Intent(HomePageActivity.this, CardCategoryActivity.class) ;
                 startActivity(intent);
             }
         });
@@ -67,7 +64,7 @@ public class HomePage extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home_page, menu);
+        getMenuInflater().inflate(R.menu.menu_homepage, menu);
         return true;
     }
 
@@ -80,7 +77,7 @@ public class HomePage extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_help) {
-            Intent intent = new Intent(HomePage.this,HelpPage.class) ;
+            Intent intent = new Intent(HomePageActivity.this, HelpPageActivity.class) ;
             startActivity(intent);
         }
 

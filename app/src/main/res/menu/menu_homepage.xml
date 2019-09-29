@@ -4,7 +4,6 @@
     <item
         android:id="@+id/action_help"
         android:title="@string/help_action"
-        android:icon="@drawable/ic_help"
         app:showAsAction="ifRoom|withText"
         />
     <item

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomePage"
+            android:name=".HomePageActivity"
             android:label="@string/title_activity_home_page"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,11 +20,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HelpPage"
+            android:name=".HelpPageActivity"
             android:label="@string/title_activity_help_page"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Cards"
+        <activity android:name=".CardCategoryActivity"
             android:label="Cards"
             android:theme="@style/AppTheme.NoActionBar"
             />
