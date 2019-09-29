@@ -19,6 +19,7 @@
          android:orientation="vertical"
          >
         <ImageView
+            android:id="@+id/card_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/card_image_height"
             android:clickable="true"
@@ -26,6 +27,7 @@
             android:contentDescription="@string/card_action"
             android:scaleType="fitXY" />
          <TextView
+             android:id="@+id/card_title"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="@string/card_action"
