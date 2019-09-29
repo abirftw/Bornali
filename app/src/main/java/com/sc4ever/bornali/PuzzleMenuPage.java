@@ -1,5 +1,6 @@
 package com.sc4ever.bornali;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.view.GravityCompat;
@@ -15,12 +16,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 public class PuzzleMenuPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+ImageButton buttonPicture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        buttonPicture = (ImageButton) findViewById(R.id.LevelOneButton);
+        buttonPicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EnterLevel();
+            }
+        });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle_menu_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -97,5 +108,10 @@ public class PuzzleMenuPage extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    void EnterLevel() {
+        System.out.println("buttonBacktoMenu");
+        Intent intentBack = new Intent(this, LevelOne.class);
+        startActivity(intentBack);
     }
 }
