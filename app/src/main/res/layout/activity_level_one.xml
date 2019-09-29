@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/PuzzleMenu"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,24 +12,24 @@
         android:id="@+id/blankbird1"
         android:layout_width="144dp"
         android:layout_height="184dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/levelonebird_blank" />
 
     <ImageView
         android:id="@+id/blankbirdmain"
         android:layout_width="144dp"
         android:layout_height="144dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/levelonebird_blank" />
 
     <ImageView
         android:id="@+id/blankbird2"
         android:layout_width="220dp"
         android:layout_height="170dp"
-        android:layout_marginLeft="530dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/levelonebird_blank" />
 
     ///MainBird
@@ -38,8 +37,8 @@
         android:id="@+id/mainbird"
         android:layout_width="144dp"
         android:layout_height="144dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="210dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="300dp"
         android:src="@drawable/levelonebird" />
     ///Back
     <Button
@@ -47,7 +46,7 @@
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:layout_gravity="right"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="550dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/backbutton"
         android:textColor="#632323"

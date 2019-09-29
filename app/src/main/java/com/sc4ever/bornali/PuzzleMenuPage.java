@@ -19,10 +19,13 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class PuzzleMenuPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 ImageButton buttonPicture;
+TextView presentleveltext;
+int id = -111;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,6 +33,7 @@ ImageButton buttonPicture;
         setContentView(R.layout.activity_puzzle_menu_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        presentleveltext = (TextView) findViewById(R.id.PresentLevelText);
         buttonPicture = (ImageButton) findViewById(R.id.LevelOneButton);
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,21 +94,29 @@ ImageButton buttonPicture;
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+         id = item.getItemId();
 
-                /*if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+                if (id == R.id.nav_levelOne)
+        {
+            presentleveltext.setText("Level One");
+            buttonPicture.setImageResource(R.drawable.samplelevelone);
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
+        }
+                else if (id == R.id.nav_levelTwo)
+        {
+            presentleveltext.setText("Level Two");
+            buttonPicture.setImageResource(R.drawable.bird);
+        }
+                else if (id == R.id.nav_levelThree)
+        {
+            presentleveltext.setText("Level Three");
+            buttonPicture.setImageResource(R.drawable.levelonebird);
+        }
+                else if (id == R.id.nav_levelFour)
+        {
+            presentleveltext.setText("Level Four");
+            buttonPicture.setImageResource(R.drawable.levelonebird_blank);
+        }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -112,7 +124,19 @@ ImageButton buttonPicture;
     }
     void EnterLevel() {
         System.out.println("buttonBacktoMenu");
-        Intent intentBack = new Intent(this, LevelOne.class);
+        Intent intentBack = null;
+        if( id == -111)
+        {
+             intentBack = new Intent(this, LevelOne.class);
+        }
+        if (id == R.id.nav_levelOne)
+        {
+             intentBack = new Intent(this, LevelOne.class);
+        }
+        else if (id == R.id.nav_levelTwo)
+        {
+             intentBack = new Intent(this, LevelTwo.class);
+        }
         startActivity(intentBack);
     }
 }
