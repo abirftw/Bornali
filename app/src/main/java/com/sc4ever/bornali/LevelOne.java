@@ -28,7 +28,7 @@ public class LevelOne extends AppCompatActivity {
 
     void Back() {
         System.out.println("buttonBacktoMenu");
-        Intent intentBack = new Intent(this, PuzzleMenuPage.class);
-        startActivity(intentBack);
+        Intent intentBackk = new Intent(this, PuzzleMenuPage.class);
+        startActivity(intentBackk);
     }
 }

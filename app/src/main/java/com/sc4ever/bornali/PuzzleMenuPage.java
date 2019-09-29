@@ -25,6 +25,11 @@ public class PuzzleMenuPage extends AppCompatActivity
 ImageButton buttonPicture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_puzzle_menu_page);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         buttonPicture = (ImageButton) findViewById(R.id.LevelOneButton);
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,10 +37,6 @@ ImageButton buttonPicture;
                 EnterLevel();
             }
         });
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_puzzle_menu_page);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +92,7 @@ ImageButton buttonPicture;
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        /*if (id == R.id.nav_home) {
+                /*if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
