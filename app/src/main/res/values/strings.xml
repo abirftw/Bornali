@@ -15,6 +15,7 @@
     <string name="menu_statistics">Statistics</string>
     <string name="title_activity_help">helpActivity</string>
     <string name="title_activity_help_page">helpPage</string>
+    <string name="title_card_category">Categories</string>
 
 
     <string name="helpPage_momBtn">Mom</string>
@@ -23,7 +24,6 @@
     <string name="helpPage_toiletBtn">Toilet</string>
     <string name="helpPage_caretakerBtn">Caretaker</string>
     <string name="helpPage_sleepBtn">Sleep</string>
-    <string name="title_activity_home_page">HomePage</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>

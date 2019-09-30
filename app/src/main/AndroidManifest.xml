@@ -11,8 +11,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".HomePageActivity"
-            android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,12 +23,10 @@
         <activity
             android:name=".HelpPageActivity"
             android:label="@string/title_activity_help_page"
-            android:theme="@style/AppTheme.NoActionBar">
+            >
         </activity>
         <activity android:name=".CardCategoryActivity"
-            android:label="Cards"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:label="@string/title_card_category" />
     </application>
 
 </manifest>

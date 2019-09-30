@@ -29,11 +29,6 @@ public class HomePageActivity extends AppCompatActivity
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        try {
-            getSupportActionBar().setTitle(R.string.app_name);
-        } catch (NullPointerException e){
-            e.printStackTrace();
-        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
