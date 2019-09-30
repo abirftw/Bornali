@@ -12,9 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LevelTwo"
+            android:name=".HomePageActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>-->
+           <activity android:name=".LevelTwo"
             android:label="@string/title_activity_level_two"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+           </activity>
         <activity android:name=".LevelOne" />
         <activity android:name=".ProfilePage">
             <intent-filter>
@@ -24,9 +32,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".HelpPageActivity"
+            android:label="@string/title_activity_help_page"
+            >
+        </activity>
+        <activity android:name=".CardCategoryActivity"
+            android:label="@string/title_card_category" />
+        <activity
             android:name=".PuzzleMenuPage"
             android:label="@string/title_activity_puzzle_menu_page"
             android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>
