@@ -14,22 +14,27 @@
         <activity
             android:name=".HomePageActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar">
+                <intent-filter>
+                    <action android:name="android.intent.action.HomePageActivity" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+        </activity>
             <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>-->
-           <activity android:name=".LevelTwo"
-            android:label="@string/title_activity_level_two"
+           <activity android:name=".LevelTwo"/>
+            <!--android:label="@string/title_activity_level_two"
             android:theme="@style/AppTheme.NoActionBar">
-           </activity>
+           </activity>-->
         <activity android:name=".LevelOne" />
         <activity android:name=".ProfilePage">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.ProfilePage" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".HelpPageActivity"

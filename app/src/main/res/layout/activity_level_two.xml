@@ -13,7 +13,7 @@
         android:layout_width="100dp"
         android:layout_height="55dp"
         android:layout_gravity="right"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="450dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/backbutton"
         android:textColor="#632323"

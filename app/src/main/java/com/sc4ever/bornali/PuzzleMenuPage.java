@@ -25,6 +25,8 @@ public class PuzzleMenuPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 ImageButton buttonPicture;
 TextView presentleveltext;
+Button back;
+
 int id = -111;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,14 @@ int id = -111;
             @Override
             public void onClick(View view) {
                 EnterLevel();
+            }
+        });
+        back = (Button) findViewById(R.id.backbuttonPuzzleMenu);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PuzzleMenuPage.this, HomePageActivity.class) ;
+                startActivity(intent);
             }
         });
         /*FloatingActionButton fab = findViewById(R.id.fab);

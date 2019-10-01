@@ -36,6 +36,15 @@ public class HomePageActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        Button puzzleBtn = findViewById(R.id.puzzleBtnId1);
+        puzzleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, PuzzleMenuPage.class) ;
+                startActivity(intent);
+            }
+        });
+
         Button cardBtn = findViewById(R.id.flashCardBtnId1);
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
