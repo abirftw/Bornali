@@ -1,6 +1,7 @@
 package com.sc4ever.bornali;
 
-import android.app.Activity;
+import
+        android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -39,9 +40,8 @@ public class CardCategoryActivity extends AppCompatActivity {
     private void prepareCards(){
         cardStyleList.add(new CardStyle(R.drawable.flash23, "Category A"));
         cardStyleList.add(new CardStyle(R.drawable.logo, "Category B"));
-        cardStyleList.add(new CardStyle(R.drawable.rsz_caretaker, "Category C"));
-        cardStyleList.add(new CardStyle(R.drawable.rsz_sleep, "Category D"));
-
+        cardStyleList.add(new CardStyle(R.drawable.logo, "Category C"));
+        cardStyleList.add(new CardStyle(R.drawable.hello,"Category E"));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

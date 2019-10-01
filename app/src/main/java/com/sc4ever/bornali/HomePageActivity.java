@@ -1,6 +1,8 @@
 package com.sc4ever.bornali;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.view.View;
@@ -22,7 +24,7 @@ import android.widget.Button;
 
 public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    Dialog myDialog ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,14 +38,20 @@ public class HomePageActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        Button cardBtn = findViewById(R.id.flashCardBtnId1);
+        Button cardBtn = (Button) findViewById(R.id.flashCardBtnId1);
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, CardCategoryActivity.class) ;
+                Intent intent = new Intent(HomePageActivity.this, CardCategoryActivity.class);
                 startActivity(intent);
             }
         });
+        myDialog = new Dialog(this) ;
+    }
+
+    public void ShowPopUp(View v){
+        myDialog.setContentView(R.layout.al);
+        myDialog.show();
     }
 
     @Override

@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.bumptech.glide.Glide;
 
@@ -26,6 +29,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView cardText;
         public ImageView cardImage;
+        public RelativeLayout cardRow ;
         public ViewHolder(View view){
             super(view);
             cardText = view.findViewById(R.id.card_title);
@@ -49,9 +53,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         CardStyle card = cardList.get(position);
         holder.cardText.setText(card.getCardText());
-        Glide.with(mContext).load(card.getCardImage()).into(holder.cardImage);
+        Glide.with(mContext).load(holder.cardImage);
     }
 }
