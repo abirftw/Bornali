@@ -1,5 +1,7 @@
 package com.sc4ever.bornali;
 
+import java.util.List;
+
 public class CardStyle {
     private int cardImage;
     private String cardText;

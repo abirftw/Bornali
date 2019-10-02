@@ -24,7 +24,7 @@ import android.widget.Button;
 
 public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Dialog myDialog ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class HomePageActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        Button cardBtn = (Button) findViewById(R.id.flashCardBtnId1);
+        Button cardBtn = findViewById(R.id.flashCardBtnId1);
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,14 +46,8 @@ public class HomePageActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        myDialog = new Dialog(this) ;
-    }
 
-    public void ShowPopUp(View v){
-        myDialog.setContentView(R.layout.al);
-        myDialog.show();
     }
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
