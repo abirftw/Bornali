@@ -23,7 +23,7 @@ import java.io.InputStream;
 
 public class ProfilePage extends AppCompatActivity {
 
-    Button btn1;
+    Button backButtonProfile;
     ImageView imageProfile;
     Button buttonProfile;
 
@@ -35,19 +35,19 @@ public class ProfilePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
 
-
+        backButtonProfile = (Button) findViewById(R.id.backbuttonProfile);
+        backButtonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfilePage.this, HomePageActivity.class) ;
+                startActivity(intent);
+            }
+        });
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST);
         }
-        btn1 = (Button) findViewById(R.id.startbutton);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openMenuPage();
-            }
-        });
 
         imageProfile = (ImageView) findViewById(R.id.profilePhoto);
         buttonProfile = (Button) findViewById(R.id.upload);
@@ -59,11 +59,7 @@ public class ProfilePage extends AppCompatActivity {
         });
     }
 
-    void openMenuPage() {
-        System.out.println("button2");
-        Intent intent2 = new Intent(this, PuzzleMenuPage.class);
-        startActivity(intent2);
-    }
+
 
     void uploadPhoto() {
         System.out.println("uploadButton");

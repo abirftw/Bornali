@@ -22,7 +22,7 @@ import android.widget.Button;
 
 public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+Button profileButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +98,12 @@ public class HomePageActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_tools) {
+        }
+        else if (id == R.id.nav_profile) {
+        profileButton = (Button) findViewById(R.id.nav_profile);
+            Intent profileIntent = new Intent(HomePageActivity.this, ProfilePage.class) ;
+            startActivity(profileIntent);
+        }else if (id == R.id.nav_tools) {
 
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
