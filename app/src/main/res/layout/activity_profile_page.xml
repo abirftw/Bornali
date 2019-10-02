@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/firstpage"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilePage"
+    android:background="@drawable/wallpaperbg">
+
+
+
+
+    <ImageView
+        android:id="@+id/profilePhoto"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/profilecustombutton"
+        android:src="@drawable/defaultprofilephoto" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_below="@+id/profilePhoto"
+        android:background="#ff8c00"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:fontFamily="@font/risque_regular"
+        android:text="Upload Profile Photo"
+        android:textSize="18dp"
+        />
+    ///Name
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/upload"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:textColor="#49222c"
+        android:textStyle="bold"
+        android:text="Name"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/textName"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/upload"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"/>
+
+    ///Age
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:gravity="center"
+        android:textColor="#49222c"
+        android:textStyle="bold"
+        android:text="Age"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/textAge"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/textName"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="1dp"
+        android:textSize="20dp"/>
+
+    ///Gender
+    <TextView
+        android:id="@+id/gender"
+        android:layout_below="@+id/age"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:textColor="#49222c"
+        android:textStyle="bold"
+        android:text="Gender"
+        android:textSize="25dp" />
+    <RadioGroup
+        android:id="@+id/radioGrp"
+        android:layout_below="@+id/age"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="120dp"
+        >
+        <RadioButton
+            android:id="@+id/radioM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:checked="false"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:text="Male"
+            />
+        <RadioButton
+            android:id="@+id/radioF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:checked="false"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:text="Female"
+            />
+    </RadioGroup>
+
+    ///E-Mail
+    <TextView
+        android:id="@+id/eMail"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/gender"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:gravity="center"
+        android:textColor="#49222c"
+        android:textStyle="bold"
+        android:text="E-Mail"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/textEMail"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/radioGrp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="7dp"
+        android:textSize="20dp"/>
+
+    ///Save
+    <Button
+        android:id="@+id/savebutton"
+        android:layout_below="@+id/textEMail"
+        android:layout_width="75dp"
+        android:layout_height="37dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="25dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/profilecustombutton"
+        android:fontFamily="@font/risque_regular"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Save"
+        android:textSize="20dp"
+        />
+    ///Back
+    <Button
+        android:id="@+id/backbuttonProfile"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/backbutton"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Back"
+        android:textSize="20dp"
+        />
+
+
+</RelativeLayout>

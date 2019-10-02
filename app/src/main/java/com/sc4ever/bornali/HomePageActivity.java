@@ -24,7 +24,7 @@ import android.widget.Button;
 
 public class HomePageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+Button profileButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,15 @@ public class HomePageActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        Button puzzleBtn = findViewById(R.id.puzzleBtnId1);
+        puzzleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, PuzzleMenuPage.class) ;
+                startActivity(intent);
+            }
+        });
+
         Button cardBtn = findViewById(R.id.flashCardBtnId1);
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +100,12 @@ public class HomePageActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_tools) {
+        }
+        else if (id == R.id.nav_profile) {
+        profileButton = (Button) findViewById(R.id.nav_profile);
+            Intent profileIntent = new Intent(HomePageActivity.this, ProfilePage.class) ;
+            startActivity(profileIntent);
+        }else if (id == R.id.nav_tools) {
 
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
