@@ -15,11 +15,13 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_menu_profiles"
-            android:title="@string/menu_profile"/>
+            android:title="@string/menu_profile"
+            />
         <item
             android:id="@+id/nav_tools"
             android:icon="@drawable/ic_menu_settings"
-            android:title="@string/menu_tools" />
+            android:title="@string/menu_tools"
+            />
         <item
             android:id="@+id/nav_statistics"
             android:icon="@drawable/ic_menu_statistics"
