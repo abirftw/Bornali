@@ -8,7 +8,7 @@
     tools:context=".LevelTwo"
     android:background="@drawable/levelone_bg">
 
-    ///BlankBirds
+    ///BlankBlueBirds
     <ImageView
         android:id="@+id/blankbirdmainLevelTwo"
         android:layout_width="144dp"
@@ -33,7 +33,7 @@
         android:layout_marginTop="75dp"
         android:src="@drawable/leveltwobluebirdblank" />
 
-    ///MainBird
+    ///MainBlueBird
     <ImageView
         android:id="@+id/mainbirdLevelTwo"
         android:layout_width="144dp"
