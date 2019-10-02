@@ -37,7 +37,7 @@ public class CardCategoryActivity extends AppCompatActivity {
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                Toast.makeText(getApplicationContext(), R.string.app_name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
             }
         });
         prepareCards();

@@ -8,15 +8,22 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".HomePageActivity"
     tools:showIn="@layout/app_bar_home_page"
-    android:background="#eceff1">
+    android:background="?attr/selectableItemBackground"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+  >
 
 
     <Button
+        android:elevation="@dimen/cardview_default_elevation"
+        android:padding="@dimen/card_margin"
         android:id="@+id/puzzleBtnId1"
-        android:layout_width="305dp"
-        android:layout_height="185dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/flashCardBtnId1"
+        android:layout_centerHorizontal="true"
         android:background="#de7878"
         android:drawableTop="@drawable/puzzle11"
         android:text="@string/play_action"
@@ -24,11 +31,13 @@
         android:textSize="30sp" />
 
     <Button
+        android:elevation="@dimen/elevation"
+        android:padding="@dimen/card_margin"
         android:id="@+id/flashCardBtnId1"
-        android:layout_width="305dp"
-        android:layout_height="200dp"
-        android:layout_below="@id/puzzleBtnId1"
-        android:layout_marginLeft="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:background="#81c784"
         android:drawableTop="@drawable/flash23"
         android:text="@string/card_action"
