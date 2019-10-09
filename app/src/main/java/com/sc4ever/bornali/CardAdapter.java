@@ -56,6 +56,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         CardStyle card = cardList.get(position);
         holder.cardText.setText(card.getCardText());
-        Glide.with(mContext).load(holder.cardImage);
+        Glide.with(mContext).load(card.getCardImage()).into(holder.cardImage);
     }
 }
