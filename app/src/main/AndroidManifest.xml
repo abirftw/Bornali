@@ -26,7 +26,19 @@
             >
         </activity>
         <activity android:name=".CardCategoryActivity"
-            android:label="@string/title_card_category" />
+            android:label="@string/title_card_category" >
+            <intent-filter>
+                <action android:name="com.sc4ever.bornali.CardCategoryActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".CardListActivity"
+            android:label="@string/title_card_category" >
+            <intent-filter>
+                <action android:name="com.sc4ever.bornali.CardListActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
