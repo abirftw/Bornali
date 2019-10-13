@@ -38,16 +38,19 @@ public class CardCategoryActivity extends AppCompatActivity {
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                Intent intent = new Intent("com.sc4ever.bornali.CardListActivity");
                 switch (position){
                     case 0:
-                        Intent intent = new Intent("com.sc4ever.bornali.CardListActivity");
-                        intent.putParcelableArrayListExtra("cardList", cardStyleList);
+                        cardStyleList.clear();
+                        cat01();
                         break;
                     case 1:
                         break;
                     case 2:
                         break;
                 }
+                intent.putParcelableArrayListExtra("cardList", cardStyleList);
+                startActivity(intent);
             }
         });
         prepareCards();
