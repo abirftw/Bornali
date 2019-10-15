@@ -41,6 +41,25 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="300dp"
         android:src="@drawable/leveltwomainbluebird" />
+    ///Congratulation image
+    <ImageView
+        android:id="@+id/leveltwowinimage"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="310dp"
+        />
+    ///Congratulation text
+    <TextView
+        android:id="@+id/leveltwowintext"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:textColor="#f0a144"
+        android:textStyle="bold"
+        android:textSize="45sp" />
     ///Back
     <Button
         android:id="@+id/backbuttontoMenu"
@@ -53,6 +72,20 @@
         android:textColor="#632323"
         android:textStyle="bold"
         android:text="Back"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        />
+    ///Next Level
+    <Button
+        android:id="@+id/nextleveltwobutton"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="495dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/backbutton"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Next Level"
+        android:textSize="20sp"
         />
 </RelativeLayout>

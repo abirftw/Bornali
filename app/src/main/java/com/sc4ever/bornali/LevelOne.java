@@ -24,13 +24,14 @@ import static com.sc4ever.bornali.ConvertCoordinate.dpToPx;
 
 public class LevelOne extends AppCompatActivity {
     private Button buttonBacktoMenu;
+    private Button buttonNextLevel;
     private ImageView blankImg;
     private ImageView img;
     private ImageView levelWinImg;
     private TextView levelWinText;
     private ViewGroup vv;
     private RelativeLayout.LayoutParams layoutParams;
-    private Animation textAnim;
+    private Animation Anim;
 
 
     @Override
@@ -62,6 +63,8 @@ public class LevelOne extends AppCompatActivity {
 
         levelWinImg = (ImageView) findViewById(R.id.levelwinimage);
         levelWinText = (TextView) findViewById(R.id.levelwintext);
+        buttonNextLevel = (Button) findViewById(R.id.nextlevelbutton);
+        buttonNextLevel.setVisibility(View.INVISIBLE);
         img.setOnTouchListener(new View.OnTouchListener() {
             DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin);
             public boolean onTouch(View v, MotionEvent event) {
@@ -74,9 +77,17 @@ public class LevelOne extends AppCompatActivity {
                     blankImg.setImageResource(R.drawable.levelonebird);
                     img.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
-                    textAnim = AnimationUtils.loadAnimation(LevelOne.this,R.anim.levelwinanimtext);
-                    levelWinText.setText("Great!");
-                    levelWinText.setAnimation(textAnim);
+                    Anim = AnimationUtils.loadAnimation(LevelOne.this,R.anim.levelwinanimtext);
+                    levelWinText.setText(R.string.level_win_text);
+                    levelWinText.setAnimation(Anim);
+                    buttonNextLevel.setVisibility(View.VISIBLE);
+                    buttonNextLevel.setAnimation(Anim);
+                    buttonNextLevel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            NextLevel();
+                        }
+                    });
                     return false;
                 }
 
@@ -98,6 +109,12 @@ public class LevelOne extends AppCompatActivity {
         System.out.println("buttonBacktoMenu");
         Intent intentBackk = new Intent(this, PuzzleMenuPage.class);
         startActivity(intentBackk);
+    }
+
+    void NextLevel() {
+
+        Intent intentNext = new Intent(this, LevelTwo.class);
+        startActivity(intentNext);
     }
 
 }

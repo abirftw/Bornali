@@ -60,7 +60,7 @@
         android:fontFamily="@font/bubblegumsans_regular"
         android:textColor="#f0a144"
         android:textStyle="bold"
-        android:textSize="45dp" />
+        android:textSize="45sp" />
     ///Back
     <Button
         android:id="@+id/backbuttontoMenu"
@@ -73,6 +73,20 @@
         android:textColor="#632323"
         android:textStyle="bold"
         android:text="Back"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        />
+    ///Next Level
+    <Button
+        android:id="@+id/nextlevelbutton"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="495dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/backbutton"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Next Level"
+        android:textSize="20sp"
         />
 </RelativeLayout>
