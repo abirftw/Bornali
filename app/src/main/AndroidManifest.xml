@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sc4ever.bornali">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,43 +9,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LevelThree"></activity>
         <activity
             android:name=".HomePageActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-                <intent-filter>
-                    <action android:name="android.intent.action.HomePageActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.HomePageActivity" />
 
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-            <!--<intent-filter>
+        <!--
+<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-            </intent-filter>-->
-           <activity android:name=".LevelTwo"/>
-            <!--android:label="@string/title_activity_level_two"
+            </intent-filter>
+        -->
+        <activity android:name=".LevelTwo" />
+        <!--
+android:label="@string/title_activity_level_two"
             android:theme="@style/AppTheme.NoActionBar">
-           </activity>-->
+           </activity>
+        -->
         <activity android:name=".LevelOne" />
         <activity android:name=".ProfilePage">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.ProfilePage" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".HelpPageActivity"
-            android:label="@string/title_activity_help_page"
-            >
-        </activity>
-        <activity android:name=".CardCategoryActivity"
+            android:label="@string/title_activity_help_page"></activity>
+        <activity
+            android:name=".CardCategoryActivity"
             android:label="@string/title_card_category" />
         <activity
             android:name=".PuzzleMenuPage"
             android:label="@string/title_activity_puzzle_menu_page"
             android:theme="@style/AppTheme.NoActionBar" />
-
     </application>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

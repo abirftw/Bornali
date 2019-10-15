@@ -22,7 +22,7 @@ import java.io.File;
 
 import static com.sc4ever.bornali.ConvertCoordinate.dpToPx;
 
-public class LevelTwo extends AppCompatActivity {
+public class LevelThree extends AppCompatActivity {
     private Button buttonBacktoMenu;
     private Button buttonNextLevel;
     private ImageView blankImg;
@@ -37,9 +37,9 @@ public class LevelTwo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_two);
+        setContentView(R.layout.activity_level_three);
 
-        blankImg = (ImageView)  findViewById(R.id.blankbirdmainLevelTwo);
+        blankImg = (ImageView)  findViewById(R.id.greenWatermelonLevelThree);
         blankImg.setOnTouchListener(new View.OnTouchListener() {
 
             public boolean onTouch(View v, MotionEvent event) {
@@ -53,17 +53,17 @@ public class LevelTwo extends AppCompatActivity {
         });
 
 
-        vv = (ViewGroup) findViewById(R.id.levelTwoPage);
-        img = (ImageView)  vv.findViewById(R.id.mainbirdLevelTwo);
+        vv = (ViewGroup) findViewById(R.id.levelThreePage);
+        img = (ImageView)  vv.findViewById(R.id.mainWatermelonLevelThree);
 
         layoutParams = new RelativeLayout.LayoutParams(ConvertCoordinate.dpToPx(144),ConvertCoordinate.dpToPx(144));
         layoutParams.leftMargin = dpToPx(150);
         layoutParams.topMargin = dpToPx(300);
         img.setLayoutParams(layoutParams);
 
-        levelWinImg = (ImageView) findViewById(R.id.leveltwowinimage);
-        levelWinText = (TextView) findViewById(R.id.leveltwowintext);
-        buttonNextLevel = (Button) findViewById(R.id.nextleveltwobutton);
+        levelWinImg = (ImageView) findViewById(R.id.levelthreewinimage);
+        levelWinText = (TextView) findViewById(R.id.levelthreewintext);
+        buttonNextLevel = (Button) findViewById(R.id.nextlevelthreebutton);
         buttonNextLevel.setVisibility(View.INVISIBLE);
         img.setOnTouchListener(new View.OnTouchListener() {
             DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin);
@@ -74,10 +74,10 @@ public class LevelTwo extends AppCompatActivity {
                     return true;
                 if(puzzleState == false)
                 {
-                    blankImg.setImageResource(R.drawable.leveltwomainbluebird);
+                    blankImg.setImageResource(R.drawable.watermelon);
                     img.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
-                    Anim = AnimationUtils.loadAnimation(LevelTwo.this,R.anim.levelwinanimtext);
+                    Anim = AnimationUtils.loadAnimation(LevelThree.this,R.anim.levelwinanimtext);
                     levelWinText.setText(R.string.level_win_text);
                     levelWinText.setAnimation(Anim);
                     buttonNextLevel.setVisibility(View.VISIBLE);
