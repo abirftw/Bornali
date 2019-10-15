@@ -23,6 +23,10 @@
             android:id="@+id/nav_levelFour"
             android:icon="@drawable/ic_pets_black_24dp"
             android:title="Level Four" />
+        <item
+            android:id="@+id/nav_levelFive"
+            android:icon="@drawable/ic_pets_black_24dp"
+            android:title="Level Five" />
     </group>
         </menu>
     </item>

@@ -127,6 +127,11 @@ int id = -111;
             presentleveltext.setText("Level Four");
             buttonPicture.setImageResource(R.drawable.levelonebird_blank);
         }
+            else if (id == R.id.nav_levelFive)
+            {
+                presentleveltext.setText("Level Five");
+                buttonPicture.setImageResource(R.drawable.levelonebird_blank);
+            }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -146,6 +151,18 @@ int id = -111;
         else if (id == R.id.nav_levelTwo)
         {
              intentBack = new Intent(this, LevelTwo.class);
+        }
+        else if (id == R.id.nav_levelThree)
+        {
+            intentBack = new Intent(this, LevelThree.class);
+        }
+        else if (id == R.id.nav_levelFour)
+        {
+            intentBack = new Intent(this, LevelFour.class);
+        }
+        else if (id == R.id.nav_levelFive)
+        {
+            intentBack = new Intent(this, LevelFive.class);
         }
         startActivity(intentBack);
     }

@@ -113,7 +113,7 @@ public class LevelFour extends AppCompatActivity {
 
     void NextLevel() {
 
-        Intent intentNext = new Intent(this, LevelFour.class);
+        Intent intentNext = new Intent(this, LevelFive.class);
         startActivity(intentNext);
     }
 
