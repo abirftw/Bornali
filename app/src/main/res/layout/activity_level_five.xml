@@ -8,39 +8,39 @@
     tools:context=".LevelFive"
     android:background="@drawable/levelone_bg">
 
-    ///Discolored Fish
+    ///Discolored Cap
     <ImageView
-        android:id="@+id/darkredFishLevelFive"
-        android:layout_width="144dp"
-        android:layout_height="144dp"
+        android:id="@+id/darkyellowCapLevelFive"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/darkredfish" />
+        android:layout_marginTop="70dp"
+        android:src="@drawable/darkyellowcap" />
 
     <ImageView
-        android:id="@+id/yellowFishLevelFive"
-        android:layout_width="144dp"
-        android:layout_height="144dp"
-        android:layout_marginLeft="150dp"
+        android:id="@+id/blackCapLevelFive"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:layout_marginLeft="110dp"
         android:layout_marginTop="40dp"
-        android:src="@drawable/yellowfish" />
+        android:src="@drawable/blackcap" />
 
     <ImageView
-        android:id="@+id/purpleFishLevelFive"
-        android:layout_width="144dp"
-        android:layout_height="144dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/purplefish" />
+        android:id="@+id/blueCapLevelFive"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/bluecap" />
 
-    ///MainFish
+    ///MainCap
     <ImageView
-        android:id="@+id/mainFishLevelfive"
-        android:layout_width="144dp"
-        android:layout_height="144dp"
+        android:id="@+id/mainCapLevelfive"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="300dp"
-        android:src="@drawable/fish" />
+        android:src="@drawable/cap" />
     ///Congratulation image
     <ImageView
         android:id="@+id/levelfivewinimage"
