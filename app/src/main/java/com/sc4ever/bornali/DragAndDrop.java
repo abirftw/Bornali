@@ -58,7 +58,7 @@ public class DragAndDrop implements View.OnTouchListener {
 
     }
 
-    @Override
+   @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         final int x = (int) motionEvent.getRawX();
         final int y = (int) motionEvent.getRawY();
@@ -80,7 +80,7 @@ public class DragAndDrop implements View.OnTouchListener {
             case MotionEvent.ACTION_UP:
                 if( (x>=x1 && x<=x4) && (y>=y1 && y<=y4) )
                 {
-
+                    return false;
                 }
                 else {
                 RelativeLayout.LayoutParams layoutParamsInitial = (RelativeLayout.LayoutParams) view.getLayoutParams();
