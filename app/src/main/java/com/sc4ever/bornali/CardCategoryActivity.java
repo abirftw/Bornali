@@ -42,42 +42,30 @@ public class CardCategoryActivity extends AppCompatActivity {
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 switch (position) {
                     case 0:
-                        cardStyleList.clear();
                         prepareEnglishAlphabets();
                         cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("English Alphabets");
-                        break;
                     case 1:
-                        cardStyleList.clear();
                         prepareBengaliAlphabets();
                         cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Bengali Alphabets");
-                        break;
                     case 2:
-                        cardStyleList.clear();
                         prepareFoodsCategory();
                         cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Foods");
-                        break;
                     case 3:
-                        cardStyleList.clear();
                         prepareClothesCategory();
                         cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Clothes");
-                        break;
 
                     case 4:
-                        cardStyleList.clear();
                         prepareToiletries();
                         cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Toiletries");
-                        break;
                     case 5:
-                        cardStyleList.clear();
                         prepareAcademicEssentials();
                         cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Academic Essentials");
-                        break;
 
                 }
             }
