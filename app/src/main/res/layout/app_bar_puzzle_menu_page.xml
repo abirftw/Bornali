@@ -24,12 +24,15 @@
 
     <ImageButton
         android:id="@+id/LevelOneButton"
+        android:scaleType="fitXY"
+        android:background="@drawable/wallpaperbg"
         android:layout_width="250dp"
         android:layout_height="230dp"
         android:layout_below="@+id/toolbar"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="200dp"
-        android:src="@drawable/samplelevelone" />
+
+        android:src="@drawable/puzzlebglevelone" />
     <TextView
         android:id="@+id/PresentLevelText"
         android:layout_below="@+id/LevelOneButton"

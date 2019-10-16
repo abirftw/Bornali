@@ -109,28 +109,28 @@ int id = -111;
                 if (id == R.id.nav_levelOne)
         {
             presentleveltext.setText("Level One");
-            buttonPicture.setImageResource(R.drawable.samplelevelone);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelone);
 
         }
                 else if (id == R.id.nav_levelTwo)
         {
             presentleveltext.setText("Level Two");
-            buttonPicture.setImageResource(R.drawable.bird);
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveltwo);
         }
                 else if (id == R.id.nav_levelThree)
         {
             presentleveltext.setText("Level Three");
-            buttonPicture.setImageResource(R.drawable.levelonebird);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelthree);
         }
                 else if (id == R.id.nav_levelFour)
         {
             presentleveltext.setText("Level Four");
-            buttonPicture.setImageResource(R.drawable.levelonebird_blank);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelfour);
         }
             else if (id == R.id.nav_levelFive)
             {
                 presentleveltext.setText("Level Five");
-                buttonPicture.setImageResource(R.drawable.levelonebird_blank);
+                buttonPicture.setImageResource(R.drawable.puzzlebglevelfive);
             }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
