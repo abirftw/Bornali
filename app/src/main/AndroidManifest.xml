@@ -49,15 +49,12 @@ android:label="@string/title_activity_level_two"
             android:name=".HelpPageActivity"
             android:label="@string/title_activity_help_page" />
         <activity
-            android:name=".CardCategoryActivity"
-            android:label="@string/title_card_category" />
-        <activity
             android:name=".PuzzleMenuPage"
             android:label="@string/title_activity_puzzle_menu_page"
-            android:theme="@style/AppTheme.NoActionBar" />
-            android:label="@string/title_activity_help_page"
-            >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+
         <activity android:name=".CardCategoryActivity"
             android:label="@string/title_card_category" >
             <intent-filter>
