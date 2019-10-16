@@ -42,6 +42,7 @@ public class CardCategoryActivity extends AppCompatActivity {
                 switch (position){
                     case 0:
                         cardStyleList.clear();
+                        intent.putExtra("cardTitle", "A");
                         cat01();
                         break;
                     case 1:

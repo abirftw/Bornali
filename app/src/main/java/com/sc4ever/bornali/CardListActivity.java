@@ -35,6 +35,7 @@ public class CardListActivity extends AppCompatActivity implements TextToSpeech.
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = findViewById(R.id.rv_card_category);
+        getSupportActionBar().setTitle(getIntent().getStringExtra("cardTitle"));
         cardStyleList = getIntent().getParcelableArrayListExtra("cardList");
         cardAdapter = new CardAdapter(cardStyleList, this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
@@ -90,5 +91,10 @@ public class CardListActivity extends AppCompatActivity implements TextToSpeech.
         } else if(i == TextToSpeech.ERROR){
             Toast.makeText(this, "Can't find TTS", Toast.LENGTH_LONG).show();
         }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }
