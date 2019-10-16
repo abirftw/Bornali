@@ -15,7 +15,8 @@
         <activity
             android:name=".HomePageActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.HomePageActivity" />
 
@@ -54,6 +55,23 @@ android:label="@string/title_activity_level_two"
             android:name=".PuzzleMenuPage"
             android:label="@string/title_activity_puzzle_menu_page"
             android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_help_page"
+            >
+        </activity>
+        <activity android:name=".CardCategoryActivity"
+            android:label="@string/title_card_category" >
+            <intent-filter>
+                <action android:name="com.sc4ever.bornali.CardCategoryActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".CardListActivity"
+            android:label="@string/title_card_category" >
+            <intent-filter>
+                <action android:name="com.sc4ever.bornali.CardListActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

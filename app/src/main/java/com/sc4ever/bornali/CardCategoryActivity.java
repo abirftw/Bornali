@@ -2,6 +2,7 @@ package com.sc4ever.bornali;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +20,7 @@ import java.util.List;
 public class CardCategoryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CardAdapter cardAdapter;
-    private List<CardStyle> cardStyleList;
+    private ArrayList<CardStyle> cardStyleList;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +38,27 @@ public class CardCategoryActivity extends AppCompatActivity {
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                Toast.makeText(getApplicationContext(), R.string.app_name, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent("com.sc4ever.bornali.CardListActivity");
+                switch (position){
+                    case 0:
+                        cardStyleList.clear();
+                        intent.putExtra("cardTitle", "A");
+                        cat01();
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                }
+                intent.putParcelableArrayListExtra("cardList", cardStyleList);
+                startActivity(intent);
             }
         });
         prepareCards();
+    }
+    private void cat01()
+    {
+        cardStyleList.add(new CardStyle(R.drawable.rsz_sleep, "Sleep"));
     }
     private void prepareCards(){
         cardStyleList.add(new CardStyle(R.drawable.flash23, "Category A"));
