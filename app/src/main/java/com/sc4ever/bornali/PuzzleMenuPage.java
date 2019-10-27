@@ -115,7 +115,7 @@ int id = -111;
         if (id == R.id.nav_levelTwo_easy)
         {
             presentleveltext.setText("Level Two");
-            buttonPicture.setImageResource(R.drawable.puzzlebgleveloneeasy);
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveltwoeasy);
 
         }
         if (id == R.id.nav_levelThree_easy)
@@ -168,7 +168,7 @@ int id = -111;
         }
         else if (id == R.id.nav_levelTwo_easy)
         {
-            intentBack = new Intent(this, LevelOne.class);
+            intentBack = new Intent(this, LevelTwoEasy.class);
         }
         else if (id == R.id.nav_levelThree_easy)
         {
