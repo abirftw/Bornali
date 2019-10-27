@@ -158,10 +158,14 @@ int id = -111;
     void EnterLevel() {
         System.out.println("buttonBacktoMenu");
         Intent intentBack = null;
+
+        ///Initial
         if( id == -111)
         {
-             intentBack = new Intent(this, LevelOne.class);
+             intentBack = new Intent(this, LevelOneEasy.class);
         }
+
+        ///Easy
         if (id == R.id.nav_levelOne_easy)
         {
             intentBack = new Intent(this, LevelOneEasy.class);
@@ -174,6 +178,8 @@ int id = -111;
         {
             intentBack = new Intent(this, LevelThreeEasy.class);
         }
+
+        ///Hard
         else if (id == R.id.nav_levelOne)
         {
              intentBack = new Intent(this, LevelOne.class);
