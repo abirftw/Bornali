@@ -106,7 +106,25 @@ int id = -111;
         // Handle navigation view item clicks here.
          id = item.getItemId();
 
-                if (id == R.id.nav_levelOne)
+        if (id == R.id.nav_levelOne_easy)
+        {
+            presentleveltext.setText("Level One");
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveloneeasy);
+
+        }
+        if (id == R.id.nav_levelTwo_easy)
+        {
+            presentleveltext.setText("Level Two");
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveloneeasy);
+
+        }
+        if (id == R.id.nav_levelThree_easy)
+        {
+            presentleveltext.setText("Level Three");
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveloneeasy);
+
+        }
+        else  if (id == R.id.nav_levelOne)
         {
             presentleveltext.setText("Level One");
             buttonPicture.setImageResource(R.drawable.puzzlebglevelone);
@@ -144,7 +162,19 @@ int id = -111;
         {
              intentBack = new Intent(this, LevelOne.class);
         }
-        if (id == R.id.nav_levelOne)
+        if (id == R.id.nav_levelOne_easy)
+        {
+            intentBack = new Intent(this, LevelOneEasy.class);
+        }
+        else if (id == R.id.nav_levelTwo_easy)
+        {
+            intentBack = new Intent(this, LevelOne.class);
+        }
+        else if (id == R.id.nav_levelThree_easy)
+        {
+            intentBack = new Intent(this, LevelOne.class);
+        }
+        else if (id == R.id.nav_levelOne)
         {
              intentBack = new Intent(this, LevelOne.class);
         }

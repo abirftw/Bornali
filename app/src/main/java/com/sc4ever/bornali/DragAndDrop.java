@@ -31,11 +31,11 @@ public class DragAndDrop implements View.OnTouchListener {
     private int initial_xPos;
     private int initial_yPos;
     private Context Activity;
-
+    private int imgNo;
     public DragAndDrop() {
     }
 
-    public DragAndDrop(Context ctx, ImageView img, ViewGroup v, final ImageView blnkImg, int initial_xPos, int initial_yPos) {
+    public DragAndDrop(Context ctx, ImageView img, ViewGroup v, final ImageView blnkImg, int initial_xPos, int initial_yPos,int imageNO) {
 
         Activity = ctx;
         vw = v;
@@ -54,7 +54,7 @@ public class DragAndDrop implements View.OnTouchListener {
                 y4 = y1 + height + 150;
             }
         });
-
+        this.imgNo = imageNO;
 
     }
 
@@ -78,7 +78,7 @@ public class DragAndDrop implements View.OnTouchListener {
 
                 ///Action_up works when the finger is released.
             case MotionEvent.ACTION_UP:
-                if( (x>=x1 && x<=x4) && (y>=y1 && y<=y4) )
+                if( (x>=x1 && x<=x4) && (y>=y1 && y<=y4) && imgNo == 1)
                 {
                     return false;
                 }

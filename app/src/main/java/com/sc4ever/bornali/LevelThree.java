@@ -66,7 +66,7 @@ public class LevelThree extends AppCompatActivity {
         buttonNextLevel = (Button) findViewById(R.id.nextlevelthreebutton);
         buttonNextLevel.setVisibility(View.INVISIBLE);
         img.setOnTouchListener(new View.OnTouchListener() {
-            DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin);
+            DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin,1);
             public boolean onTouch(View v, MotionEvent event) {
 
                 boolean puzzleState = dragAndDrop.onTouch(v, event);
