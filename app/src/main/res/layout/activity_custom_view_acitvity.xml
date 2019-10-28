@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CustomViewActivity">
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/practiceCanvas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY = "8dp"
-        ></LinearLayout>
+
+        ></RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
