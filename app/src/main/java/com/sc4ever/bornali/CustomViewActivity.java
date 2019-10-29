@@ -52,6 +52,6 @@ public class CustomViewActivity extends AppCompatActivity {
     }
 
     private boolean compare (float x1 , float y1 , float x2 , float y2) {
-        return  (x2 >= x1 - 5 && x2 <= x1 + 5 && y2 >= y1 - 5 && y2 <= y1 + 5 );
+        return  (x2 >= x1 - 15 && x2 <= x1 + 15 && y2 >= y1 - 15 && y2 <= y1 + 15 );
     }
 }
