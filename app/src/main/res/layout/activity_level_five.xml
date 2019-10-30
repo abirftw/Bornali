@@ -51,15 +51,28 @@
         />
     ///Congratulation text
     <TextView
-        android:id="@+id/levelfivewintext"
+        android:id="@+id/levelfivewintextLayer1"
         android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="140dp"
+        android:layout_height="25dp"
+
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:fontFamily="@font/bubblegumsans_regular"
         android:textColor="#f0a144"
         android:textStyle="bold"
-        android:textSize="45sp" />
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/levelfivewintextLayer2"
+        android:layout_below="@+id/levelfivewintextLayer1"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:textColor="#f0a144"
+        android:textStyle="bold"
+        android:textSize="25sp" />
     ///Back
     <Button
         android:id="@+id/backbuttontoMenu"
@@ -72,6 +85,21 @@
         android:textColor="#632323"
         android:textStyle="bold"
         android:text="Back"
+        android:textSize="20sp"
+        />
+
+    ///Go to Menu
+    <Button
+        android:id="@+id/gotomenubutton"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="495dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/backbutton"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Go to Menu!"
         android:textSize="20sp"
         />
 
