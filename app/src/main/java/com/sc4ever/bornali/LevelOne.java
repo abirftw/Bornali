@@ -39,6 +39,8 @@ public class LevelOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_one);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         blankImg = (ImageView)  findViewById(R.id.blankbirdmain);
         blankImg.setOnTouchListener(new View.OnTouchListener() {
 
@@ -96,13 +98,13 @@ public class LevelOne extends AppCompatActivity {
 
         });
 
-        buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
+/*        buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
         buttonBacktoMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Back();
             }
-        });
+        });*/
     }
 
     void Back() {

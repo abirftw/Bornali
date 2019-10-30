@@ -74,7 +74,7 @@
         android:textStyle="bold"
         android:textSize="25sp" />
     ///Back
-    <Button
+    <!--<Button
         android:id="@+id/backbuttontoMenu"
         android:layout_width="80dp"
         android:layout_height="40dp"
@@ -86,7 +86,7 @@
         android:textStyle="bold"
         android:text="Back"
         android:textSize="20sp"
-        />
+        />-->
 
     ///Go to Menu
     <Button

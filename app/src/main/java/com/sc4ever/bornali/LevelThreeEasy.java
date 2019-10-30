@@ -39,6 +39,8 @@ public class LevelThreeEasy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_three_easy);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         blankImg = (ImageView)  findViewById(R.id.blankBoatLevelThreeEasy);
         blankImg.setOnTouchListener(new View.OnTouchListener() {
 
@@ -121,13 +123,13 @@ public class LevelThreeEasy extends AppCompatActivity {
 
         });
 
-        buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
+        /*buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
         buttonBacktoMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Back();
             }
-        });
+        });*/
     }
 
     void Back() {

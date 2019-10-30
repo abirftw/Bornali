@@ -36,6 +36,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_level_two">LevelTwo</string>
     <string name="level_win_text">Great!</string>
+    <string name="last_level_win_text_layer1">Congratulations!</string>
+    <string name="last_level_win_text_layer2">You finished all the levels!!</string>
 
     <string name="difficulty">Difficulty:</string>
     <string name="easyDifficulty">Easy</string>
