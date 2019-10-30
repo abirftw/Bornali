@@ -21,7 +21,34 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
+///Difficulty Text
+    <TextView
+        android:id="@+id/difficultyText"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:gravity="center"
+        android:textColor="#b156"
+        android:textStyle="bold"
+        android:text="@string/difficulty"
+        android:fontFamily="@font/risque_regular"
+        android:textSize="35sp" />
+    <TextView
+        android:id="@+id/presentDifficultyText"
+        android:layout_below="@+id/difficultyText"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:textColor="#BC3232"
+        android:textStyle="bold"
+        android:text="@string/easyDifficulty"
+        android:fontFamily="@font/risque_regular"
+        android:textSize="35sp" />
 
+    ///Main Display Image
     <ImageButton
         android:id="@+id/LevelOneButton"
         android:scaleType="fitXY"
@@ -31,8 +58,8 @@
         android:layout_below="@+id/toolbar"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="200dp"
-
         android:src="@drawable/puzzlebgleveloneeasy" />
+    ///Display Present Level
     <TextView
         android:id="@+id/PresentLevelText"
         android:layout_below="@+id/LevelOneButton"
@@ -43,9 +70,9 @@
         android:gravity="center"
         android:textColor="#BC3232"
         android:textStyle="bold"
-        android:text="Level One"
+        android:text="@string/level_one"
         android:fontFamily="@font/risque_regular"
-        android:textSize="35dp" />
+        android:textSize="35sp" />
     ///Back
     <Button
         android:id="@+id/backbuttonPuzzleMenu"
@@ -58,7 +85,7 @@
         android:textColor="#632323"
         android:textStyle="bold"
         android:text="Back"
-        android:textSize="20dp"
+        android:textSize="20sp"
         />
 
     <include layout="@layout/content_puzzle_menu_page" />

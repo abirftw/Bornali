@@ -37,5 +37,15 @@
     <string name="title_activity_level_two">LevelTwo</string>
     <string name="level_win_text">Great!</string>
 
+    <string name="difficulty">Difficulty:</string>
+    <string name="easyDifficulty">Easy</string>
+    <string name="hardDifficulty">Hard</string>
+
+    <string name="level_one">Level One</string>
+    <string name="level_two">Level Two</string>
+    <string name="level_three">Level Three</string>
+    <string name="level_four">Level Four</string>
+    <string name="level_five">Level Five</string>
+
 
 </resources>
