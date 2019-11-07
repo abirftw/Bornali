@@ -26,6 +26,7 @@ public class PuzzleMenuPage extends AppCompatActivity
 ImageButton buttonPicture;
 TextView presentleveltext;
 Button back;
+TextView difficultyButton;
 
 int id = -111;
     @Override
@@ -43,6 +44,7 @@ int id = -111;
                 EnterLevel();
             }
         });
+        difficultyButton = (TextView) findViewById(R.id.presentDifficultyText);
         back = (Button) findViewById(R.id.backbuttonPuzzleMenu);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,30 +108,56 @@ int id = -111;
         // Handle navigation view item clicks here.
          id = item.getItemId();
 
-                if (id == R.id.nav_levelOne)
+        if (id == R.id.nav_levelOne_easy)
         {
-            presentleveltext.setText("Level One");
+            presentleveltext.setText(R.string.level_one);
+            difficultyButton.setText(R.string.easyDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveloneeasy);
+
+        }
+        if (id == R.id.nav_levelTwo_easy)
+        {
+            presentleveltext.setText(R.string.level_two);
+            difficultyButton.setText(R.string.easyDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveltwoeasy);
+
+        }
+        if (id == R.id.nav_levelThree_easy)
+        {
+            presentleveltext.setText(R.string.level_three);
+            difficultyButton.setText(R.string.easyDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelthreeeasy);
+
+        }
+        else  if (id == R.id.nav_levelOne)
+        {
+            presentleveltext.setText(R.string.level_one);
+            difficultyButton.setText(R.string.hardDifficulty);
             buttonPicture.setImageResource(R.drawable.puzzlebglevelone);
 
         }
                 else if (id == R.id.nav_levelTwo)
         {
-            presentleveltext.setText("Level Two");
+            presentleveltext.setText(R.string.level_two);
+            difficultyButton.setText(R.string.hardDifficulty);
             buttonPicture.setImageResource(R.drawable.puzzlebgleveltwo);
         }
                 else if (id == R.id.nav_levelThree)
         {
-            presentleveltext.setText("Level Three");
+            presentleveltext.setText(R.string.level_three);
+            difficultyButton.setText(R.string.hardDifficulty);
             buttonPicture.setImageResource(R.drawable.puzzlebglevelthree);
         }
                 else if (id == R.id.nav_levelFour)
         {
-            presentleveltext.setText("Level Four");
+            presentleveltext.setText(R.string.level_four);
+            difficultyButton.setText(R.string.hardDifficulty);
             buttonPicture.setImageResource(R.drawable.puzzlebglevelfour);
         }
             else if (id == R.id.nav_levelFive)
             {
-                presentleveltext.setText("Level Five");
+                presentleveltext.setText(R.string.level_five);
+                difficultyButton.setText(R.string.hardDifficulty);
                 buttonPicture.setImageResource(R.drawable.puzzlebglevelfive);
             }
 
@@ -140,11 +168,29 @@ int id = -111;
     void EnterLevel() {
         System.out.println("buttonBacktoMenu");
         Intent intentBack = null;
+
+        ///Initial
         if( id == -111)
         {
-             intentBack = new Intent(this, LevelOne.class);
+             intentBack = new Intent(this, LevelOneEasy.class);
         }
-        if (id == R.id.nav_levelOne)
+
+        ///Easy
+        if (id == R.id.nav_levelOne_easy)
+        {
+            intentBack = new Intent(this, LevelOneEasy.class);
+        }
+        else if (id == R.id.nav_levelTwo_easy)
+        {
+            intentBack = new Intent(this, LevelTwoEasy.class);
+        }
+        else if (id == R.id.nav_levelThree_easy)
+        {
+            intentBack = new Intent(this, LevelThreeEasy.class);
+        }
+
+        ///Hard
+        else if (id == R.id.nav_levelOne)
         {
              intentBack = new Intent(this, LevelOne.class);
         }

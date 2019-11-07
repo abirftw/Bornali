@@ -4,7 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Puzzle">
+    <item android:title="Puzzle"/>
+    <item android:title="Easy">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_levelOne_easy"
+                    android:icon="@drawable/ic_pets_black_24dp"
+                    android:title="Level One" />
+                <item
+                    android:id="@+id/nav_levelTwo_easy"
+                    android:icon="@drawable/ic_pets_black_24dp"
+                    android:title="Level Two" />
+                <item
+                    android:id="@+id/nav_levelThree_easy"
+                    android:icon="@drawable/ic_pets_black_24dp"
+                    android:title="Level Three" />
+
+            </group>
+        </menu>
+    </item>
+    <item android:title="Hard">
         <menu>
     <group android:checkableBehavior="single">
         <item

@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LevelFive"></activity>
-        <activity android:name=".LevelFour" />
-        <activity android:name=".LevelThree" />
+        <activity android:name=".LevelThreeEasy" android:parentActivityName=".PuzzleMenuPage"></activity>
+        <activity android:name=".LevelTwoEasy" android:parentActivityName=".PuzzleMenuPage"/>
+        <activity android:name=".LevelOneEasy" android:parentActivityName=".PuzzleMenuPage"/>
+        <activity android:name=".LevelFive" android:parentActivityName=".PuzzleMenuPage"/>
+        <activity android:name=".LevelFour" android:parentActivityName=".PuzzleMenuPage"/>
+        <activity android:name=".LevelThree" android:parentActivityName=".PuzzleMenuPage"/>
         <activity
             android:name=".HomePageActivity"
             android:label="@string/app_name"
@@ -28,13 +31,13 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         -->
-        <activity android:name=".LevelTwo" />
+        <activity android:name=".LevelTwo" android:parentActivityName=".PuzzleMenuPage"/>
         <!--
 android:label="@string/title_activity_level_two"
             android:theme="@style/AppTheme.NoActionBar">
            </activity>
         -->
-        <activity android:name=".LevelOne" />
+        <activity android:name=".LevelOne" android:parentActivityName=".PuzzleMenuPage"/>
         <activity android:name=".ProfilePage">
 
             <!--

@@ -24,11 +24,11 @@ import static com.sc4ever.bornali.ConvertCoordinate.dpToPx;
 
 public class LevelFive extends AppCompatActivity {
     private Button buttonBacktoMenu;
-    private Button buttonNextLevel;
+    private Button buttonGoToMenu;
     private ImageView blankImg;
     private ImageView img;
     private ImageView levelWinImg;
-    private TextView levelWinText;
+    private TextView levelWinTextLayer1,levelWinTextLayer2;
     private ViewGroup vv;
     private RelativeLayout.LayoutParams layoutParams;
     private Animation Anim;
@@ -38,6 +38,8 @@ public class LevelFive extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_five);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         blankImg = (ImageView)  findViewById(R.id.blueCapLevelFive);
         blankImg.setOnTouchListener(new View.OnTouchListener() {
@@ -62,10 +64,15 @@ public class LevelFive extends AppCompatActivity {
         img.setLayoutParams(layoutParams);
 
         levelWinImg = (ImageView) findViewById(R.id.levelfivewinimage);
-        levelWinText = (TextView) findViewById(R.id.levelfivewintext);
+        levelWinTextLayer1 = (TextView) findViewById(R.id.levelfivewintextLayer1);
+        levelWinTextLayer2 = (TextView) findViewById(R.id.levelfivewintextLayer2);
+
+        buttonGoToMenu = (Button) findViewById(R.id.gotomenubutton);
+        buttonGoToMenu.setVisibility(View.INVISIBLE);
+
 
         img.setOnTouchListener(new View.OnTouchListener() {
-            DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin);
+            DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin,1);
             public boolean onTouch(View v, MotionEvent event) {
 
                 boolean puzzleState = dragAndDrop.onTouch(v, event);
@@ -77,8 +84,21 @@ public class LevelFive extends AppCompatActivity {
                     img.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
                     Anim = AnimationUtils.loadAnimation(LevelFive.this,R.anim.levelwinanimtext);
-                    levelWinText.setText(R.string.level_win_text);
-                    levelWinText.setAnimation(Anim);
+                    levelWinTextLayer1.setText(R.string.last_level_win_text_layer1);
+                    levelWinTextLayer1.setAnimation(Anim);
+
+                    levelWinTextLayer2.setText(R.string.last_level_win_text_layer2);
+                    levelWinTextLayer2.setAnimation(Anim);
+
+
+                    buttonGoToMenu.setVisibility(View.VISIBLE);
+                    buttonGoToMenu.setAnimation(Anim);
+                    buttonGoToMenu.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            GoToMenu();
+                        }
+                    });
 
                     return false;
                 }
@@ -88,13 +108,13 @@ public class LevelFive extends AppCompatActivity {
 
         });
 
-        buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
+        /*buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
         buttonBacktoMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Back();
             }
-        });
+        });*/
     }
 
     void Back() {
@@ -103,5 +123,10 @@ public class LevelFive extends AppCompatActivity {
         startActivity(intentBackk);
     }
 
+    void GoToMenu() {
+        System.out.println("buttonBacktoMenu");
+        Intent intentBackk = new Intent(this, PuzzleMenuPage.class);
+        startActivity(intentBackk);
+    }
 
 }

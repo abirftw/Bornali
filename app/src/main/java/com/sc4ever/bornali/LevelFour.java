@@ -39,6 +39,8 @@ public class LevelFour extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_four);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         blankImg = (ImageView)  findViewById(R.id.yellowFishLevelFour);
         blankImg.setOnTouchListener(new View.OnTouchListener() {
 
@@ -66,7 +68,7 @@ public class LevelFour extends AppCompatActivity {
         buttonNextLevel = (Button) findViewById(R.id.nextlevelfourbutton);
         buttonNextLevel.setVisibility(View.INVISIBLE);
         img.setOnTouchListener(new View.OnTouchListener() {
-            DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin);
+            DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin,1);
             public boolean onTouch(View v, MotionEvent event) {
 
                 boolean puzzleState = dragAndDrop.onTouch(v, event);
@@ -96,13 +98,13 @@ public class LevelFour extends AppCompatActivity {
 
         });
 
-        buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
+        /*buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
         buttonBacktoMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Back();
             }
-        });
+        });*/
     }
 
     void Back() {
