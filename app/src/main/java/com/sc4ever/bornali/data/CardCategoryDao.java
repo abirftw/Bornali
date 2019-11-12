@@ -1,5 +1,6 @@
 package com.sc4ever.bornali.data;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @Dao
 public interface CardCategoryDao {
-    @Query("Select * from card_categories")
-    List<CardCategory> getCardCategoryList();
-    @Query("select * from card_categories where cat_id in (:catIDs)")
-    List<CardCategory> loadAllByIds(int[] catIDs);
+    //getting all the cards of a single categories
+    //-1 is used to load all the categories
+    @Query("Select * from card_categories where part_of_id = :id")
+    LiveData<List<CardCategory>> getAllCards(int id);
     @Insert
     void insertCardCategory(CardCategory cardCategory);
     @Update
