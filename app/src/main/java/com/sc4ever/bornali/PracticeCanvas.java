@@ -63,6 +63,7 @@ public class PracticeCanvas extends View {
         lastYCoordinate = vitalPoints.get(0).getCoordinateY() ;
 
         for (dots i : pathList) {
+
             canvas.drawLine(lastXCoordinate,lastYCoordinate , i.getCoordinateX(),i.getCoordinateY(),paint);
             lastXCoordinate = i.getCoordinateX();
             lastYCoordinate = i.getCoordinateY();
@@ -76,6 +77,21 @@ public class PracticeCanvas extends View {
             float x = 3*width ;
             alphabetALine1.add(new dots(x,y));
             vitalPoints.add(new dots(x,y)) ;
+        }
+        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
+            float y = 2*height ;
+            alphabetALine1.add(new dots(x,y));
+            vitalPoints.add(new dots(x,y));
+        }
+        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
+            float y = (float)45/10*height ;
+            alphabetALine1.add(new dots(x,y));
+            vitalPoints.add(new dots(x,y));
+        }
+        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
+            float y = 7*height ;
+            alphabetALine1.add(new dots(x,y));
+            vitalPoints.add(new dots(x,y));
         }
     }
 

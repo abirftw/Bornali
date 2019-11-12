@@ -75,5 +75,26 @@ public class Alphabets {
             return  dotsOfB ;
     }
 
+    private ArrayList<dots> E(){
+        ArrayList <dots> dotsOfE = new ArrayList<dots>() ;
+        for(float y = 2*height ; y <= 7*height ; y+= height/2){
+            float x = 3*width ;
+            dotsOfE.add(new dots(x,y));
+        }
+        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
+            float y = 2*height ;
+            dotsOfE.add(new dots(x,y));
+        }
+        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
+            float y = (float)45/10*height ;
+            dotsOfE.add(new dots(x,y));
+        }
+        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
+            float y = 7*height ;
+            dotsOfE.add(new dots(x,y));
+        }
+        return dotsOfE ;
+    }
+
 
 }
