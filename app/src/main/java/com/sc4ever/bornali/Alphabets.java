@@ -96,5 +96,64 @@ public class Alphabets {
         return dotsOfE ;
     }
 
+    private ArrayList<dots> D(){
+        ArrayList<dots> dotsOfD = new ArrayList<dots>() ;
+        for(float y = 2*height ; y <= 7*height ; y+= height/2){
+            float x = 3*width ;
+            dotsOfD.add(new dots(x,y));
+        }
+
+        for(float x = 4*width ; x <= 6*width ; x += width){
+            float y = 2*height ;
+            dotsOfD.add(new dots(x,y));
+        }
+        float z = (float)25/10*height ;
+        for(float x = 7*width ; x <= 8*width ; x += width/2 , z += height/2){
+            dotsOfD.add(new dots(x,z));
+        }
+
+        dotsOfD.add(new dots((float)82/10*width , 4*height)) ;
+        dotsOfD.add(new dots((float)83/10*width , (float)45/10*height)) ;
+        dotsOfD.add(new dots((float)82/10*width , 5*height)) ;
+
+        z = (float)55/10*height ;
+        for(float x = 8*width ; x >= 7*width ; x -= width/2 , z += height/2){
+            dotsOfD.add(new dots(x,z));
+        }
+        for(float x = 4*width ; x <= 6*width ; x += width){
+            float y = 7*height ;
+            dotsOfD.add(new dots(x,y));
+        }
+
+        return dotsOfD ;
+    }
+
+    private ArrayList<dots> C(){
+        ArrayList<dots> dotsOfC = new ArrayList<dots>() ;
+
+        dotsOfC.add(new dots(7*width , (float)24/10*height)) ;
+        dotsOfC.add(new dots(6*width , (float)21/10*height)) ;
+        dotsOfC.add(new dots(5*width , 2*height)) ;
+        dotsOfC.add(new dots(4*width , (float)22/10*height)) ;
+        dotsOfC.add(new dots(3*width , (float)25/10*height)) ;
+
+        dotsOfC.add(new dots((float)25/10*width , (float)28/10*height)) ;
+        dotsOfC.add(new dots((float)22/10*width , (float)31/10*height)) ;
+        dotsOfC.add(new dots(2*width , (float)35/10*height)) ;
+        dotsOfC.add(new dots((float)19/10*width , 4*height)) ;
+        dotsOfC.add(new dots((float)19/10*width , (float)45/10*height)) ;
+        dotsOfC.add(new dots((float)19/10*width , 5*height)) ;
+
+        dotsOfC.add(new dots((float)21/10*width , (float)55/10*height)) ;
+        dotsOfC.add(new dots((float)25/10*width , 6*height)) ;
+        dotsOfC.add(new dots(3*width , (float)63/10*height)) ;
+        dotsOfC.add(new dots(4*width , (float)66/10*height)) ;
+        dotsOfC.add(new dots(5*width , (float)68/10*height)) ;
+        dotsOfC.add(new dots(6*width , (float)68/10*height)) ;
+        dotsOfC.add(new dots(7*width , (float)65/10*height)) ;
+
+        return dotsOfC ;
+    }
+
 
 }

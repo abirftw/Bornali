@@ -59,11 +59,10 @@ public class PracticeCanvas extends View {
         }
 
         //set the last coordinates as the 0th element in the array
-        lastXCoordinate = vitalPoints.get(0).getCoordinateX() ;
-        lastYCoordinate = vitalPoints.get(0).getCoordinateY() ;
+        lastXCoordinate = alphabetALine1.get(0).getCoordinateX() ;
+        lastYCoordinate = alphabetALine1.get(0).getCoordinateY() ;
 
         for (dots i : pathList) {
-
             canvas.drawLine(lastXCoordinate,lastYCoordinate , i.getCoordinateX(),i.getCoordinateY(),paint);
             lastXCoordinate = i.getCoordinateX();
             lastYCoordinate = i.getCoordinateY();
@@ -72,27 +71,27 @@ public class PracticeCanvas extends View {
 
 
     private void fillListWithDots() {
+        alphabetALine1.add(new dots(7*width , (float)24/10*height)) ;
+        alphabetALine1.add(new dots(6*width , (float)21/10*height)) ;
+        alphabetALine1.add(new dots(5*width , 2*height)) ;
+        alphabetALine1.add(new dots(4*width , (float)22/10*height)) ;
+        alphabetALine1.add(new dots(3*width , (float)25/10*height)) ;
 
-        for(float y = 2*height ; y <= 7*height ; y+= height/2){
-            float x = 3*width ;
-            alphabetALine1.add(new dots(x,y));
-            vitalPoints.add(new dots(x,y)) ;
-        }
-        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
-            float y = 2*height ;
-            alphabetALine1.add(new dots(x,y));
-            vitalPoints.add(new dots(x,y));
-        }
-        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
-            float y = (float)45/10*height ;
-            alphabetALine1.add(new dots(x,y));
-            vitalPoints.add(new dots(x,y));
-        }
-        for(float x = 35/10*width ; x <= 8*width ; x += height/2){
-            float y = 7*height ;
-            alphabetALine1.add(new dots(x,y));
-            vitalPoints.add(new dots(x,y));
-        }
+        alphabetALine1.add(new dots((float)25/10*width , (float)28/10*height)) ;
+        alphabetALine1.add(new dots((float)22/10*width , (float)31/10*height)) ;
+        alphabetALine1.add(new dots(2*width , (float)35/10*height)) ;
+        alphabetALine1.add(new dots((float)19/10*width , 4*height)) ;
+        alphabetALine1.add(new dots((float)19/10*width , (float)45/10*height)) ;
+        alphabetALine1.add(new dots((float)19/10*width , 5*height)) ;
+
+        alphabetALine1.add(new dots((float)21/10*width , (float)55/10*height)) ;
+        alphabetALine1.add(new dots((float)25/10*width , 6*height)) ;
+        alphabetALine1.add(new dots(3*width , (float)63/10*height)) ;
+        alphabetALine1.add(new dots(4*width , (float)66/10*height)) ;
+        alphabetALine1.add(new dots(5*width , (float)68/10*height)) ;
+        alphabetALine1.add(new dots(6*width , (float)68/10*height)) ;
+        alphabetALine1.add(new dots(7*width , (float)65/10*height)) ;
+
     }
 
     public void updatePath(float x , float y){ // update The pathList
