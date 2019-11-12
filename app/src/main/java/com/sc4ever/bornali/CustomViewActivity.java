@@ -34,8 +34,8 @@ public class CustomViewActivity extends AppCompatActivity {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 practiceCanvas.setCurX(motionEvent.getX());
                 practiceCanvas.setCurY(motionEvent.getY());
-                for(int i = index ; i < practiceCanvas.vitalPoints.size() ; i++){
-                    float x = practiceCanvas.vitalPoints.get(i).getCoordinateX(), y = practiceCanvas.vitalPoints.get(i).getCoordinateY();
+                for(int i = index ; i < practiceCanvas.alphabetALine1.size() ; i++){
+                    float x = practiceCanvas.alphabetALine1.get(i).getCoordinateX(), y = practiceCanvas.alphabetALine1.get(i).getCoordinateY();
                     if(compare(x,y,motionEvent.getX(),motionEvent.getY())) {
                         practiceCanvas.updatePath(x, y);
                         index++ ;
