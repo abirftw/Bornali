@@ -216,7 +216,7 @@ int id = -111;
         ///Medium
         else if (id == R.id.nav_levelOne_medium)
         {
-            intentBack = new Intent(this, LevelOneEasy.class);
+            intentBack = new Intent(this, LevelOneMedium.class);
         }
         else if (id == R.id.nav_levelTwo_medium)
         {
