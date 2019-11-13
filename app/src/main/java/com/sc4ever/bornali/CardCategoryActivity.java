@@ -40,74 +40,77 @@ public class CardCategoryActivity extends AppCompatActivity {
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                cardStyleList.clear();
                 switch (position) {
-                    case 0 :
+                    case 0:
+                        prepareEnglishAlphabets();
+                        cardAdapter.notifyDataSetChanged();
+                        getSupportActionBar().setTitle("English Alphabets");
+                    case 1:
+                        prepareBengaliAlphabets();
+                        cardAdapter.notifyDataSetChanged();
+                        getSupportActionBar().setTitle("Bengali Alphabets");
+                    case 2:
+                        prepareFoodsCategory();
+                        cardAdapter.notifyDataSetChanged();
+                        getSupportActionBar().setTitle("Foods");
+                    case 3:
                         prepareClothesCategory();
+                        cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Clothes");
-                        break;
 
                     case 4:
-                        prepareEnglishAlphabets();
-                        getSupportActionBar().setTitle("Toiletries");
-                        break;
-                    case 5:
-                        prepareBengaliAlphabets();
-                        getSupportActionBar().setTitle("Academic Essentials");
-                        break;
-
-                    case 1:
-                        prepareFoodsCategory();
-                        getSupportActionBar().setTitle("Foods");
-                        break;
-                    case 2:
                         prepareToiletries();
+                        cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Toiletries");
-                        break;
-                    case 3:
+                    case 5:
                         prepareAcademicEssentials();
+                        cardAdapter.notifyDataSetChanged();
                         getSupportActionBar().setTitle("Academic Essentials");
-                        break;
+
                 }
-                cardAdapter.notifyDataSetChanged();
             }
         });
         prepareCards();
     }
-    private void prepareCards(){
-        cardStyleList.add(new CardStyle(R.drawable.tee_shirt,"Clothes"));
-        cardStyleList.add(new CardStyle(R.drawable.rsz_1food, "Foods"));
-        cardStyleList.add(new CardStyle(R.drawable.tooth_brush,"Toiletries"));
-        cardStyleList.add(new CardStyle(R.drawable.backpack,"Academic Essentials"));
+
+    private void prepareCards() {
         cardStyleList.add(new CardStyle(R.drawable.alphabets, "English Alphabets"));
         cardStyleList.add(new CardStyle(R.drawable.alphabets_bengali, "Bengali Alphabets"));
+        cardStyleList.add(new CardStyle(R.drawable.rsz_1food, "Foods"));
+        cardStyleList.add(new CardStyle(R.drawable.tee_shirt, "Clothes"));
+        cardStyleList.add(new CardStyle(R.drawable.tooth_brush, "Toiletries"));
+        cardStyleList.add(new CardStyle(R.drawable.backpack, "Academic Essentials"));
     }
-    private void prepareClothesCategory(){
-        cardStyleList.add(new CardStyle(R.drawable.tee_shirt,"Shirt"));
-        cardStyleList.add(new CardStyle(R.drawable.sweater,"Sweater"));
-        cardStyleList.add(new CardStyle(R.drawable.shorts,"Shorts"));
-        cardStyleList.add(new CardStyle(R.drawable.lifejacket,"Life Jacket"));
-        cardStyleList.add(new CardStyle(R.drawable.underwear,"Under Wear"));
-        cardStyleList.add(new CardStyle(R.drawable.hat,"Cap"));
-        cardStyleList.add(new CardStyle(R.drawable.winter_hat,"Winter Hat"));
-        cardStyleList.add(new CardStyle(R.drawable.shoes,"Shoes"));
-        cardStyleList.add(new CardStyle(R.drawable.sandals,"Sandals"));
-        cardStyleList.add(new CardStyle(R.drawable.socks,"Socks"));
+
+    private void prepareClothesCategory() {
+        cardStyleList.add(new CardStyle(R.drawable.tee_shirt, "Shirt"));
+        cardStyleList.add(new CardStyle(R.drawable.sweater, "Sweater"));
+        cardStyleList.add(new CardStyle(R.drawable.shorts, "Shorts"));
+        cardStyleList.add(new CardStyle(R.drawable.lifejacket, "Life Jacket"));
+        cardStyleList.add(new CardStyle(R.drawable.underwear, "Under Wear"));
+        cardStyleList.add(new CardStyle(R.drawable.hat, "Cap"));
+        cardStyleList.add(new CardStyle(R.drawable.winter_hat, "Winter Hat"));
+        cardStyleList.add(new CardStyle(R.drawable.shoes, "Shoes"));
+        cardStyleList.add(new CardStyle(R.drawable.sandals, "Sandals"));
+        cardStyleList.add(new CardStyle(R.drawable.socks, "Socks"));
     }
-    private void prepareFoodsCategory(){
-        cardStyleList.add(new CardStyle(R.drawable.rice,"Rice"));
-        cardStyleList.add(new CardStyle(R.drawable.egg1,"Egg"));
-        cardStyleList.add(new CardStyle(R.drawable.singara,"Singara"));
-        cardStyleList.add(new CardStyle(R.drawable.somusa,"Somusa"));
+
+    private void prepareFoodsCategory() {
+        cardStyleList.add(new CardStyle(R.drawable.rice, "Rice"));
+        cardStyleList.add(new CardStyle(R.drawable.egg1, "Egg"));
+        cardStyleList.add(new CardStyle(R.drawable.singara, "Singara"));
+        cardStyleList.add(new CardStyle(R.drawable.somusa, "Somusa"));
     }
-    private  void prepareToiletries(){
-        cardStyleList.add(new CardStyle(R.drawable.tooth_brush,"Tooth Brush"));
-        cardStyleList.add(new CardStyle(R.drawable.paste,"Tooth Paste"));
+
+    private void prepareToiletries() {
+        cardStyleList.add(new CardStyle(R.drawable.tooth_brush, "Tooth Brush"));
+        cardStyleList.add(new CardStyle(R.drawable.paste, "Tooth Paste"));
     }
-    private void prepareAcademicEssentials(){
-        cardStyleList.add(new CardStyle(R.drawable.backpack,"Bag"));
-        cardStyleList.add(new CardStyle(R.drawable.pencil,"Pencil"));
-        cardStyleList.add(new CardStyle(R.drawable.scissors,"Scissorss"));
+
+    private void prepareAcademicEssentials() {
+        cardStyleList.add(new CardStyle(R.drawable.backpack, "Bag"));
+        cardStyleList.add(new CardStyle(R.drawable.pencil, "Pencil"));
+        cardStyleList.add(new CardStyle(R.drawable.scissors, "Scissorss"));
     }
 
     private void prepareEnglishAlphabets() {
