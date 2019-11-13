@@ -2,6 +2,7 @@
     <string name="app_name">Bornali</string>
 
 
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_tools">Settings</string>
@@ -53,6 +54,7 @@
     <string name="level_three">Level Three</string>
     <string name="level_four">Level Four</string>
     <string name="level_five">Level Five</string>
+    <string name="title_activity_custom_draw_practice">CustomDrawPractice</string>
 
 
 </resources>

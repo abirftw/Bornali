@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:background="?attr/selectableItemBackground"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/card_row">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"

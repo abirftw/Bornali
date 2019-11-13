@@ -1,6 +1,8 @@
 package com.sc4ever.bornali;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.view.View;
@@ -50,12 +52,21 @@ Button profileButton;
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, CardCategoryActivity.class) ;
+                Intent intent = new Intent(HomePageActivity.this, CardCategoryActivity.class);
                 startActivity(intent);
             }
         });
-    }
 
+        Button drawBtn = findViewById(R.id.drawButton) ;
+        drawBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, CustomViewActivity.class) ;
+                startActivity(intent);
+            }
+        });
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

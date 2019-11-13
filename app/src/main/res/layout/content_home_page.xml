@@ -43,4 +43,16 @@
         android:text="@string/card_action"
         android:textColor="#a249a4"
         android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/drawButton"
+        android:layout_width="317dp"
+        android:layout_height="185dp"
+        android:layout_below="@id/flashCardBtnId1"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#E4D176"
+        android:drawableTop="@drawable/rszdrawandlearn"
+        android:text="Practice"
+        android:textSize="25sp" />
 </RelativeLayout>
