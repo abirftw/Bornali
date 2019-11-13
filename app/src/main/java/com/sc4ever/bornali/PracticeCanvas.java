@@ -69,7 +69,7 @@ public class PracticeCanvas extends View {
     }
 
 
-    public void updateAlphabetList() {
+    private void updateAlphabetList() {
         float j;
         float slope = (6 * height) / (3 * width);
         float constant = (8 * width * slope / 10) - (7 * height / 10);
@@ -85,6 +85,10 @@ public class PracticeCanvas extends View {
             j = 632;
             alphabetALine1.add(new dots(i, j));
         }
+    }
+    public void changeAlphabetList(ArrayList<dots> newList){
+        alphabetALine1.clear();
+        alphabetALine1 = newList ;
     }
 
     public void updatePath(float x , float y){ // update The pathList

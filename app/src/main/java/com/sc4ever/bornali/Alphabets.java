@@ -1,6 +1,7 @@
 package com.sc4ever.bornali;
 
 import android.content.res.Resources;
+import android.view.Menu;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +18,7 @@ public class Alphabets {
     private static int getScreenHeight(){
         return Resources.getSystem().getDisplayMetrics().heightPixels ;
     }
-
+    //app:cardCornerRadius="@dimen/card_radius"
     public ArrayList<dots> A() { // construct the shape of A
         ArrayList<dots> dotsOfA = new ArrayList() ;
         float j ;
@@ -70,6 +71,7 @@ public class Alphabets {
             dotsOfB.add(new dots((float)4*width,(float)7*height)) ;
             return  dotsOfB ;
     }
+
 
     public ArrayList<dots> E(){
         ArrayList <dots> dotsOfE = new ArrayList<dots>() ;
