@@ -22,7 +22,7 @@ import java.io.File;
 
 import static com.sc4ever.bornali.ConvertCoordinate.dpToPx;
 
-public class LevelTwoMedium extends AppCompatActivity {
+public class LevelThreeMedium extends AppCompatActivity {
     private Button buttonBacktoMenu;
     private Button buttonNextLevel;
     private ImageView blankImg;
@@ -37,11 +37,11 @@ public class LevelTwoMedium extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_two_medium);
+        setContentView(R.layout.activity_level_three_medium);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        blankImg = (ImageView)  findViewById(R.id.mainpaperplaneup);
+        blankImg = (ImageView)  findViewById(R.id.mainballup);
         blankImg.setOnTouchListener(new View.OnTouchListener() {
 
             public boolean onTouch(View v, MotionEvent event) {
@@ -55,8 +55,8 @@ public class LevelTwoMedium extends AppCompatActivity {
         });
 
 
-        vv = (ViewGroup) findViewById(R.id.levelTwoMediumPage);
-        img = (ImageView)  vv.findViewById(R.id.mainPaperPlane);
+        vv = (ViewGroup) findViewById(R.id.levelThreeMediumPage);
+        img = (ImageView)  vv.findViewById(R.id.mainBall);
 
         layoutParams = new RelativeLayout.LayoutParams(ConvertCoordinate.dpToPx(144),ConvertCoordinate.dpToPx(144));
         layoutParams.leftMargin = dpToPx(150);
@@ -76,10 +76,10 @@ public class LevelTwoMedium extends AppCompatActivity {
                     return true;
                 if(puzzleState == false)
                 {
-                    blankImg.setImageResource(R.drawable.mainpaperplane);
+                    blankImg.setImageResource(R.drawable.ball);
                     img.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
-                    Anim = AnimationUtils.loadAnimation(LevelTwoMedium.this,R.anim.levelwinanimtext);
+                    Anim = AnimationUtils.loadAnimation(LevelThreeMedium.this,R.anim.levelwinanimtext);
                     levelWinText.setText(R.string.level_win_text);
                     levelWinText.setAnimation(Anim);
                     buttonNextLevel.setVisibility(View.VISIBLE);
@@ -115,7 +115,7 @@ public class LevelTwoMedium extends AppCompatActivity {
 
     void NextLevel() {
 
-        Intent intentNext = new Intent(this, LevelThreeMedium.class);
+        Intent intentNext = new Intent(this, LevelOne.class);
         startActivity(intentNext);
     }
 

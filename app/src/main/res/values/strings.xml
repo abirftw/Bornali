@@ -41,6 +41,7 @@
 
     <string name="difficulty">Difficulty:</string>
     <string name="easyDifficulty">Easy</string>
+    <string name="mediumDifficulty">Medium</string>
     <string name="hardDifficulty">Hard</string>
 
     <string name="level_one">Level One</string>

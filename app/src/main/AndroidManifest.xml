@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LevelTwoMedium" android:parentActivityName=".PuzzleMenuPage" ></activity>
-        <activity android:name=".LevelOneMedium" android:parentActivityName=".PuzzleMenuPage"/>
+        <activity android:name=".LevelThreeMedium" android:parentActivityName=".PuzzleMenuPage"></activity>
+        <activity
+            android:name=".LevelTwoMedium"
+            android:parentActivityName=".PuzzleMenuPage" />
+        <activity
+            android:name=".LevelOneMedium"
+            android:parentActivityName=".PuzzleMenuPage" />
         <activity
             android:name=".LevelThreeEasy"
             android:parentActivityName=".PuzzleMenuPage" />

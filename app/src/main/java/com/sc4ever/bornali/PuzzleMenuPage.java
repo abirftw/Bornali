@@ -134,22 +134,22 @@ int id = -111;
         else if (id == R.id.nav_levelOne_medium)
         {
             presentleveltext.setText(R.string.level_one);
-            difficultyButton.setText(R.string.easyDifficulty);
-            buttonPicture.setImageResource(R.drawable.puzzlebgleveloneeasy);
+            difficultyButton.setText(R.string.mediumDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelonemedium);
 
         }
         else if (id == R.id.nav_levelTwo_medium)
         {
             presentleveltext.setText(R.string.level_two);
-            difficultyButton.setText(R.string.easyDifficulty);
-            buttonPicture.setImageResource(R.drawable.puzzlebgleveltwoeasy);
+            difficultyButton.setText(R.string.mediumDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveltwomedium);
 
         }
         else if (id == R.id.nav_levelThree_medium)
         {
             presentleveltext.setText(R.string.level_three);
-            difficultyButton.setText(R.string.easyDifficulty);
-            buttonPicture.setImageResource(R.drawable.puzzlebglevelthreeeasy);
+            difficultyButton.setText(R.string.mediumDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelthreemedium);
 
         }
         ///Hard
@@ -224,7 +224,7 @@ int id = -111;
         }
         else if (id == R.id.nav_levelThree_medium)
         {
-            intentBack = new Intent(this, LevelThreeEasy.class);
+            intentBack = new Intent(this, LevelThreeMedium.class);
         }
 
         ///Hard
