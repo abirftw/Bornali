@@ -13,11 +13,11 @@ import java.util.List;
 
 public class CardCategoryRepository {
     private AppDatabase appDatabase;
-    private CardCategoryRepository(Context context){
+    public CardCategoryRepository(Context context){
         appDatabase = AppDatabase.getDatabaseInstance(context);
     }
     public void insertCard(String cardText, String URI){
-        insertCard(cardText, URI, -1); //If a card is a category and thus isn't part of
+        insertCard(cardText, URI, 0); //If a card is a category and thus isn't part of
                                                 //any category
     }
     public void insertCard(String cardText, String URI, int partOFID){

@@ -35,7 +35,7 @@ public class ProfilePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
 
-        backButtonProfile = (Button) findViewById(R.id.backbuttonProfile);
+        backButtonProfile =  findViewById(R.id.backbuttonProfile);
         backButtonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,12 +62,8 @@ public class ProfilePage extends AppCompatActivity {
 
 
     void uploadPhoto() {
-        System.out.println("uploadButton");
-        Intent i = new Intent();
-        i.setType("image/jpeg");
-        i.setAction(Intent.ACTION_GET_CONTENT);
-
-        File pictureDirectory = getApplicationContext().getFilesDir();
+        Intent i = new Intent(Intent.ACTION_PICK);
+        File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         String pictureDirectoryPath = pictureDirectory.getPath();
         Uri data = Uri.parse(pictureDirectoryPath);
         i.setDataAndType(data, "image/*");

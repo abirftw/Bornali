@@ -11,6 +11,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.sc4ever.bornali.data.CardCategoryRepository;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
