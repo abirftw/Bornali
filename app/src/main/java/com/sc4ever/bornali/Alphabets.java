@@ -9,8 +9,6 @@ public class Alphabets {
 
     private int width = getScreenWidth()/10 ;
     private int height = getScreenHeight()/10 ;
-    ArrayList<dots> alphabetOnAction = new ArrayList<dots>() ;
-
 
     private static int getScreenWidth(){
         return Resources.getSystem().getDisplayMetrics().widthPixels ;
@@ -21,7 +19,7 @@ public class Alphabets {
     }
 
     public ArrayList<dots> A() { // construct the shape of A
-        ArrayList<dots> dotsOfA = new ArrayList<dots>() ;
+        ArrayList<dots> dotsOfA = new ArrayList() ;
         float j ;
         float slope = (6*height)/(3*width) ;
         float constant = (8*width*slope/10) - (7*height/10) ;
@@ -33,17 +31,15 @@ public class Alphabets {
                 j = i*slope - constant*21/2 ;
             }
             dotsOfA.add(new dots(i, j));
-            alphabetOnAction.add(new dots(i,j)) ;
         }
         for(float i = 35/10*width ; i <= 65/10*width ; i+= width){
             j = 632 ;
             dotsOfA.add(new dots(i, j));
-            alphabetOnAction.add(new dots(i,j)) ;
         }
         return  dotsOfA ;
     }
 
-    private ArrayList<dots> B(){
+    public ArrayList<dots> B(){
             ArrayList <dots> dotsOfB = new ArrayList<dots>();
             for(float y = 2*height ; y <= 7*height ; y+= height/2){
                 float x = 3*width ;
@@ -75,7 +71,7 @@ public class Alphabets {
             return  dotsOfB ;
     }
 
-    private ArrayList<dots> E(){
+    public ArrayList<dots> E(){
         ArrayList <dots> dotsOfE = new ArrayList<dots>() ;
         for(float y = 2*height ; y <= 7*height ; y+= height/2){
             float x = 3*width ;

@@ -56,6 +56,15 @@ Button profileButton;
             }
         });
 
+        Button drawBtn = findViewById(R.id.drawButton) ;
+        drawBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, CustomViewActivity.class) ;
+                startActivity(intent);
+            }
+        });
+
     }
     @Override
     public void onBackPressed() {

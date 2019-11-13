@@ -17,9 +17,8 @@ public class PracticeCanvas extends View {
     private int ballColor ;
     private int index = 0 ; // index of vitalPoints
     private  float lastXCoordinate , lastYCoordinate ;
-    public ArrayList<dots> alphabetALine1 = new ArrayList<dots>();
+    public ArrayList<dots> alphabetALine1 = new ArrayList();
     public ArrayList <dots> pathList = new ArrayList<dots>() ;
-    public ArrayList<dots> vitalPoints = new ArrayList<dots>() ;
 
     public void setCurX(float curX) {
         this.curX = curX;
@@ -52,8 +51,8 @@ public class PracticeCanvas extends View {
 
         canvas.drawCircle(curX, curY, 20, paint);  // a pointer is drawn on the canvas which will move corresponding to the touch on screen
 
-        fillListWithDots(); // prepare arrayList to construct the alphabets
 
+        updateAlphabetList();
         for (dots j : alphabetALine1) { // draw the alphabet layout
             canvas.drawCircle(j.getCoordinateX(), j.getCoordinateY(), 15, paint);
         }
@@ -70,28 +69,22 @@ public class PracticeCanvas extends View {
     }
 
 
-    private void fillListWithDots() {
-        alphabetALine1.add(new dots(7*width , (float)24/10*height)) ;
-        alphabetALine1.add(new dots(6*width , (float)21/10*height)) ;
-        alphabetALine1.add(new dots(5*width , 2*height)) ;
-        alphabetALine1.add(new dots(4*width , (float)22/10*height)) ;
-        alphabetALine1.add(new dots(3*width , (float)25/10*height)) ;
-
-        alphabetALine1.add(new dots((float)25/10*width , (float)28/10*height)) ;
-        alphabetALine1.add(new dots((float)22/10*width , (float)31/10*height)) ;
-        alphabetALine1.add(new dots(2*width , (float)35/10*height)) ;
-        alphabetALine1.add(new dots((float)19/10*width , 4*height)) ;
-        alphabetALine1.add(new dots((float)19/10*width , (float)45/10*height)) ;
-        alphabetALine1.add(new dots((float)19/10*width , 5*height)) ;
-
-        alphabetALine1.add(new dots((float)21/10*width , (float)55/10*height)) ;
-        alphabetALine1.add(new dots((float)25/10*width , 6*height)) ;
-        alphabetALine1.add(new dots(3*width , (float)63/10*height)) ;
-        alphabetALine1.add(new dots(4*width , (float)66/10*height)) ;
-        alphabetALine1.add(new dots(5*width , (float)68/10*height)) ;
-        alphabetALine1.add(new dots(6*width , (float)68/10*height)) ;
-        alphabetALine1.add(new dots(7*width , (float)65/10*height)) ;
-
+    public void updateAlphabetList() {
+        float j;
+        float slope = (6 * height) / (3 * width);
+        float constant = (8 * width * slope / 10) - (7 * height / 10);
+        for (float i = 2 * width; i <= 8 * width; i += width / 2) {
+            if (i <= 5 * width) {
+                j = height * 10 - i * slope;
+            } else {
+                j = i * slope - constant * 21 / 2;
+            }
+            alphabetALine1.add(new dots(i, j));
+        }
+        for (float i = 35 / 10 * width; i <= 65 / 10 * width; i += width) {
+            j = 632;
+            alphabetALine1.add(new dots(i, j));
+        }
     }
 
     public void updatePath(float x , float y){ // update The pathList
@@ -99,8 +92,7 @@ public class PracticeCanvas extends View {
     }
 
     public void print(){
-        System.out.println(alphabetALine1.get(2).getCoordinateX() + " " + alphabetALine1.get(2).getCoordinateY()) ;
-        System.out.println(getScreenWidth()+ " screen " + getScreenHeight());
+        System.out.println("PathList Size : " + pathList.size()) ;
     }
 
 }
