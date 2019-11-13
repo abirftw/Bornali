@@ -220,7 +220,7 @@ int id = -111;
         }
         else if (id == R.id.nav_levelTwo_medium)
         {
-            intentBack = new Intent(this, LevelTwoEasy.class);
+            intentBack = new Intent(this, LevelTwoMedium.class);
         }
         else if (id == R.id.nav_levelThree_medium)
         {
