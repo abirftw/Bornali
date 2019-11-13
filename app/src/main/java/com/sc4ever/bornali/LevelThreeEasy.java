@@ -27,6 +27,7 @@ public class LevelThreeEasy extends AppCompatActivity {
     private Button buttonNextLevel;
     private ImageView blankImg;
     private ImageView img,img1;
+    private ImageView notMainImg;
     private ImageView levelWinImg;
     private TextView levelWinText;
     private ViewGroup vv,vv1;
@@ -67,6 +68,7 @@ public class LevelThreeEasy extends AppCompatActivity {
         levelWinText = (TextView) findViewById(R.id.levelthreeeasywintext);
         buttonNextLevel = (Button) findViewById(R.id.nextlevelthreeeasybutton);
         buttonNextLevel.setVisibility(View.INVISIBLE);
+        notMainImg = (ImageView) findViewById(R.id.notMainBoatLevelThreeEasy);
         img.setOnTouchListener(new View.OnTouchListener() {
             DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin,1);
             public boolean onTouch(View v, MotionEvent event) {
@@ -78,6 +80,7 @@ public class LevelThreeEasy extends AppCompatActivity {
                 {
                     blankImg.setImageResource(R.drawable.mainboat);
                     img.setImageDrawable(null);
+                    notMainImg.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
                     Anim = AnimationUtils.loadAnimation(LevelThreeEasy.this,R.anim.levelwinanimtext);
                     levelWinText.setText(R.string.level_win_text);

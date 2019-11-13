@@ -27,6 +27,7 @@ public class LevelTwoEasy extends AppCompatActivity {
     private Button buttonNextLevel;
     private ImageView blankImg;
     private ImageView img,img1;
+    private ImageView notMainImg;
     private ImageView levelWinImg;
     private TextView levelWinText;
     private ViewGroup vv,vv1;
@@ -67,6 +68,7 @@ public class LevelTwoEasy extends AppCompatActivity {
         levelWinText = (TextView) findViewById(R.id.leveltwoeasywintext);
         buttonNextLevel = (Button) findViewById(R.id.nextleveltwoeasybutton);
         buttonNextLevel.setVisibility(View.INVISIBLE);
+        notMainImg = (ImageView) findViewById(R.id.notMainTrainLevelTwoEasy);
         img.setOnTouchListener(new View.OnTouchListener() {
             DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin,1);
             public boolean onTouch(View v, MotionEvent event) {
@@ -78,6 +80,7 @@ public class LevelTwoEasy extends AppCompatActivity {
                 {
                     blankImg.setImageResource(R.drawable.maintrain);
                     img.setImageDrawable(null);
+                    notMainImg.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
                     Anim = AnimationUtils.loadAnimation(LevelTwoEasy.this,R.anim.levelwinanimtext);
                     levelWinText.setText(R.string.level_win_text);
