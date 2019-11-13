@@ -23,6 +23,7 @@
     <string name="menu_send">Send</string>
 
     <string name="help_action">HELP</string>
+    <string name="save_action">Save</string>
     <string name="play_action">Play</string>
     <string name="card_action">Learn</string>
     <string name="add_category_action">Add Category</string>
@@ -43,6 +44,8 @@
     <string name="difficulty">Difficulty:</string>
     <string name="easyDifficulty">Easy</string>
     <string name="hardDifficulty">Hard</string>
+
+    <string name="Desc">Description</string>
 
     <string name="level_one">Level One</string>
     <string name="level_two">Level Two</string>

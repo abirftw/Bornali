@@ -90,7 +90,8 @@ public class CardCategoryActivity extends AppCompatActivity {
             Intent intent = new Intent(CardCategoryActivity.this, HelpPageActivity.class) ;
             startActivity(intent);
         } else if(id == R.id.action_add_category){
-
+            Intent intent = new Intent(CardCategoryActivity.this, AddCardActivity.class) ;
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

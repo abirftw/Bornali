@@ -72,6 +72,13 @@ android:label="@string/title_activity_level_two"
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:name=".AddCardActivity"
+            android:label="@string/add_category_action" >
+            <intent-filter>
+                <action android:name="com.sc4ever.bornali.AddCardActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

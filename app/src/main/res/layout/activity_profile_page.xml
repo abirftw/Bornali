@@ -17,8 +17,8 @@
         android:layout_height="144dp"
         android:layout_marginLeft="133dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/profilecustombutton"
-        android:src="@drawable/defaultprofilephoto" />
+        tools:srcCompat="@tools:sample/avatars[0]"
+        />
 
     <Button
         android:id="@+id/upload"
