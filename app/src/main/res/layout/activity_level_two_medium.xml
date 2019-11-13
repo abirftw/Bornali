@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/levelTwoMediumPage"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelTwoMedium"
+    android:background="@drawable/levelone_bg">
+
+    ///BlankPaperPlanes
+    <ImageView
+        android:id="@+id/mainpaperplaneup"
+        android:layout_width="144dp"
+        android:layout_height="184dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/mainpaperplane" />
+
+    <ImageView
+        android:id="@+id/notmainpaperplaneflip"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/paperplaneflip" />
+
+    <ImageView
+        android:id="@+id/notmainpaperplanedown"
+        android:layout_width="220dp"
+        android:layout_height="170dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/paperplanedown" />
+
+    ///Main Paper plane
+    <ImageView
+        android:id="@+id/mainPaperPlane"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/mainpaperplane" />
+
+    ///Congratulation image
+    <ImageView
+        android:id="@+id/levelwinimage"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="310dp"
+        />
+    ///Congratulation text
+    <TextView
+        android:id="@+id/levelwintext"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:textColor="#f0a144"
+        android:textStyle="bold"
+        android:textSize="45sp" />
+    ///Back
+    <!--<Button
+        android:id="@+id/backbuttontoMenu"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="495dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/backbutton"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Back"
+        android:textSize="20sp"
+        />-->
+    ///Next Level
+    <Button
+        android:id="@+id/nextlevelbutton"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="495dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/backbutton"
+        android:textColor="#632323"
+        android:textStyle="bold"
+        android:text="Next Level"
+        android:textSize="20sp"
+        />
+</RelativeLayout>

@@ -27,6 +27,7 @@ public class LevelOneEasy extends AppCompatActivity {
     private Button buttonNextLevel;
     private ImageView blankImg;
     private ImageView img,img1;
+    private ImageView notMainImg;
     private ImageView levelWinImg;
     private TextView levelWinText;
     private ViewGroup vv,vv1;
@@ -67,6 +68,7 @@ public class LevelOneEasy extends AppCompatActivity {
         levelWinText = (TextView) findViewById(R.id.leveloneeasywintext);
         buttonNextLevel = (Button) findViewById(R.id.nextleveloneeasybutton);
         buttonNextLevel.setVisibility(View.INVISIBLE);
+        notMainImg = (ImageView) findViewById(R.id.notMainTreeLevelOneEasy);
         img.setOnTouchListener(new View.OnTouchListener() {
             DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin,1);
             public boolean onTouch(View v, MotionEvent event) {
@@ -78,6 +80,7 @@ public class LevelOneEasy extends AppCompatActivity {
                 {
                     blankImg.setImageResource(R.drawable.maintree);
                     img.setImageDrawable(null);
+                    notMainImg.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
                     Anim = AnimationUtils.loadAnimation(LevelOneEasy.this,R.anim.levelwinanimtext);
                     levelWinText.setText(R.string.level_win_text);

@@ -108,6 +108,7 @@ int id = -111;
         // Handle navigation view item clicks here.
          id = item.getItemId();
 
+         ///Easy
         if (id == R.id.nav_levelOne_easy)
         {
             presentleveltext.setText(R.string.level_one);
@@ -115,20 +116,43 @@ int id = -111;
             buttonPicture.setImageResource(R.drawable.puzzlebgleveloneeasy);
 
         }
-        if (id == R.id.nav_levelTwo_easy)
+        else if (id == R.id.nav_levelTwo_easy)
         {
             presentleveltext.setText(R.string.level_two);
             difficultyButton.setText(R.string.easyDifficulty);
             buttonPicture.setImageResource(R.drawable.puzzlebgleveltwoeasy);
 
         }
-        if (id == R.id.nav_levelThree_easy)
+        else if (id == R.id.nav_levelThree_easy)
         {
             presentleveltext.setText(R.string.level_three);
             difficultyButton.setText(R.string.easyDifficulty);
             buttonPicture.setImageResource(R.drawable.puzzlebglevelthreeeasy);
 
         }
+        ///Medium
+        else if (id == R.id.nav_levelOne_medium)
+        {
+            presentleveltext.setText(R.string.level_one);
+            difficultyButton.setText(R.string.mediumDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelonemedium);
+
+        }
+        else if (id == R.id.nav_levelTwo_medium)
+        {
+            presentleveltext.setText(R.string.level_two);
+            difficultyButton.setText(R.string.mediumDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebgleveltwomedium);
+
+        }
+        else if (id == R.id.nav_levelThree_medium)
+        {
+            presentleveltext.setText(R.string.level_three);
+            difficultyButton.setText(R.string.mediumDifficulty);
+            buttonPicture.setImageResource(R.drawable.puzzlebglevelthreemedium);
+
+        }
+        ///Hard
         else  if (id == R.id.nav_levelOne)
         {
             presentleveltext.setText(R.string.level_one);
@@ -187,6 +211,20 @@ int id = -111;
         else if (id == R.id.nav_levelThree_easy)
         {
             intentBack = new Intent(this, LevelThreeEasy.class);
+        }
+
+        ///Medium
+        else if (id == R.id.nav_levelOne_medium)
+        {
+            intentBack = new Intent(this, LevelOneMedium.class);
+        }
+        else if (id == R.id.nav_levelTwo_medium)
+        {
+            intentBack = new Intent(this, LevelTwoMedium.class);
+        }
+        else if (id == R.id.nav_levelThree_medium)
+        {
+            intentBack = new Intent(this, LevelThreeMedium.class);
         }
 
         ///Hard

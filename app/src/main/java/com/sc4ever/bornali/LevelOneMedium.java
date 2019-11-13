@@ -22,27 +22,26 @@ import java.io.File;
 
 import static com.sc4ever.bornali.ConvertCoordinate.dpToPx;
 
-public class LevelThreeEasy extends AppCompatActivity {
+public class LevelOneMedium extends AppCompatActivity {
     private Button buttonBacktoMenu;
     private Button buttonNextLevel;
     private ImageView blankImg;
-    private ImageView img,img1;
-    private ImageView notMainImg;
+    private ImageView img;
     private ImageView levelWinImg;
     private TextView levelWinText;
-    private ViewGroup vv,vv1;
-    private RelativeLayout.LayoutParams layoutParams,layoutParams1;
+    private ViewGroup vv;
+    private RelativeLayout.LayoutParams layoutParams;
     private Animation Anim;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_three_easy);
+        setContentView(R.layout.activity_level_one_medium);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        blankImg = (ImageView)  findViewById(R.id.blankBoatLevelThreeEasy);
+        blankImg = (ImageView)  findViewById(R.id.mainflowerup);
         blankImg.setOnTouchListener(new View.OnTouchListener() {
 
             public boolean onTouch(View v, MotionEvent event) {
@@ -56,19 +55,18 @@ public class LevelThreeEasy extends AppCompatActivity {
         });
 
 
-        vv = (ViewGroup) findViewById(R.id.levelThreeEasyPage);
-        img = (ImageView)  vv.findViewById(R.id.mainBoatLevelThreeEasy);
+        vv = (ViewGroup) findViewById(R.id.levelOneMediumPage);
+        img = (ImageView)  vv.findViewById(R.id.mainFlower);
 
         layoutParams = new RelativeLayout.LayoutParams(ConvertCoordinate.dpToPx(144),ConvertCoordinate.dpToPx(144));
-        layoutParams.leftMargin = dpToPx(25);
+        layoutParams.leftMargin = dpToPx(150);
         layoutParams.topMargin = dpToPx(300);
         img.setLayoutParams(layoutParams);
 
-        levelWinImg = (ImageView) findViewById(R.id.levelthreeeasywinimage);
-        levelWinText = (TextView) findViewById(R.id.levelthreeeasywintext);
-        buttonNextLevel = (Button) findViewById(R.id.nextlevelthreeeasybutton);
+        levelWinImg = (ImageView) findViewById(R.id.levelwinimage);
+        levelWinText = (TextView) findViewById(R.id.levelwintext);
+        buttonNextLevel = (Button) findViewById(R.id.nextlevelbutton);
         buttonNextLevel.setVisibility(View.INVISIBLE);
-        notMainImg = (ImageView) findViewById(R.id.notMainBoatLevelThreeEasy);
         img.setOnTouchListener(new View.OnTouchListener() {
             DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img,vv,blankImg,layoutParams.leftMargin,layoutParams.topMargin,1);
             public boolean onTouch(View v, MotionEvent event) {
@@ -78,11 +76,10 @@ public class LevelThreeEasy extends AppCompatActivity {
                     return true;
                 if(puzzleState == false)
                 {
-                    blankImg.setImageResource(R.drawable.mainboat);
+                    blankImg.setImageResource(R.drawable.mainflower);
                     img.setImageDrawable(null);
-                    notMainImg.setImageDrawable(null);
                     levelWinImg.setImageResource(R.drawable.levelwin);
-                    Anim = AnimationUtils.loadAnimation(LevelThreeEasy.this,R.anim.levelwinanimtext);
+                    Anim = AnimationUtils.loadAnimation(LevelOneMedium.this,R.anim.levelwinanimtext);
                     levelWinText.setText(R.string.level_win_text);
                     levelWinText.setAnimation(Anim);
                     buttonNextLevel.setVisibility(View.VISIBLE);
@@ -101,32 +98,7 @@ public class LevelThreeEasy extends AppCompatActivity {
 
         });
 
-        vv1 = (ViewGroup) findViewById(R.id.levelThreeEasyPage);
-        img1 = (ImageView)  vv.findViewById(R.id.notMainBoatLevelThreeEasy);
-
-        layoutParams1 = new RelativeLayout.LayoutParams(ConvertCoordinate.dpToPx(144),ConvertCoordinate.dpToPx(144));
-        layoutParams1.leftMargin = dpToPx(250);
-        layoutParams1.topMargin = dpToPx(300);
-        img1.setLayoutParams(layoutParams1);
-
-        img1.setOnTouchListener(new View.OnTouchListener() {
-            DragAndDrop dragAndDrop = new DragAndDrop(getApplicationContext(), img1,vv1,blankImg,layoutParams1.leftMargin,layoutParams1.topMargin,2);
-            public boolean onTouch(View v, MotionEvent event) {
-
-                boolean puzzleState = dragAndDrop.onTouch(v, event);
-                if(puzzleState == true)
-                    return true;
-                if(puzzleState == false)
-                {
-                    return false;
-                }
-
-                return true;
-            }
-
-        });
-
-        /*buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
+/*        buttonBacktoMenu = (Button) findViewById(R.id.backbuttontoMenu);
         buttonBacktoMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,7 +115,7 @@ public class LevelThreeEasy extends AppCompatActivity {
 
     void NextLevel() {
 
-        Intent intentNext = new Intent(this, LevelOneMedium.class);
+        Intent intentNext = new Intent(this, LevelTwoMedium.class);
         startActivity(intentNext);
     }
 
