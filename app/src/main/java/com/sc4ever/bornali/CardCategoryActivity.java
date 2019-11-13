@@ -70,7 +70,7 @@ public class CardCategoryActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_homepage, menu);
+        getMenuInflater().inflate(R.menu.menu_cardcategory, menu);
         return true;
     }
     @Override
@@ -89,6 +89,8 @@ public class CardCategoryActivity extends AppCompatActivity {
         if (id == R.id.action_help) {
             Intent intent = new Intent(CardCategoryActivity.this, HelpPageActivity.class) ;
             startActivity(intent);
+        } else if(id == R.id.action_add_category){
+
         }
 
         return super.onOptionsItemSelected(item);

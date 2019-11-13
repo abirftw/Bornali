@@ -25,6 +25,7 @@
     <string name="help_action">HELP</string>
     <string name="play_action">Play</string>
     <string name="card_action">Learn</string>
+    <string name="add_category_action">Add Category</string>
 
     <string name="title_activity_puzzle_menu_page">PuzzleMenuPage</string>
 
