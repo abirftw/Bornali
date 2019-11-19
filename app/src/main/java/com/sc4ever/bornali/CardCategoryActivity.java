@@ -3,8 +3,11 @@ package com.sc4ever.bornali;
 import
         android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.sc4ever.bornali.data.CardCategory;
+import com.sc4ever.bornali.data.CardCategoryRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +69,8 @@ public class CardCategoryActivity extends AppCompatActivity {
         cardStyleList.add(new CardStyle(R.drawable.rsz_sleep, "Sleep"));
     }
     private void prepareCards(){
+        AsyncUpdateList x = new AsyncUpdateList();
+        x.execute();
         cardStyleList.add(new CardStyle(R.drawable.flash23, "Category A"));
         cardStyleList.add(new CardStyle(R.drawable.logo, "Category B"));
         cardStyleList.add(new CardStyle(R.drawable.rsz_caretaker, "Category C"));
@@ -97,5 +105,19 @@ public class CardCategoryActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    private class AsyncUpdateList extends AsyncTask<Void, Void, Void>{
+        @Override
+        protected Void doInBackground(Void... voids) {
+            final CardCategoryRepository repository = new
+                    CardCategoryRepository(getApplicationContext());
+            final List<CardCategory> cardCategories;
+            cardCategories = repository.getAllCardsByID(0);
+            for (CardCategory cardCategory : cardCategories){
+                Log.d("Path", cardCategory.getImgURI());
+                cardStyleList.add(new CardStyle(cardCategory.getImgURI(), cardCategory.getText()));
+            }
+            return null;
+        }
     }
 }

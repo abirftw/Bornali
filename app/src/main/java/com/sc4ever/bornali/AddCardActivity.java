@@ -3,20 +3,19 @@ package com.sc4ever.bornali;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.SQLException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -59,7 +58,20 @@ public class AddCardActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                newCardCategoryRepository.insertCard(textDescription.getText().toString(),imageUri.toString());
+
+               try {
+                   newCardCategoryRepository.updateCard(textDescription.getText().toString(),
+                           imageUri.toString(), 0 , 0);
+               } catch (SQLException e){
+                   e.printStackTrace();
+                   Toast.makeText(getApplicationContext(),  R.string.category_error,
+                           Toast.LENGTH_LONG).show();
+               } finally {
+                   Toast.makeText(getApplicationContext(), R.string.category_success,
+                           Toast.LENGTH_LONG).show();
+                   finish();
+               }
+
             }
         });
 
@@ -91,8 +103,8 @@ public class AddCardActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     void uploadPhoto() {
-        Intent i = new Intent(Intent.ACTION_PICK);
-        File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+        File pictureDirectory = Environment.getDataDirectory();
         String pictureDirectoryPath = pictureDirectory.getPath();
         Uri data = Uri.parse(pictureDirectoryPath);
         i.setDataAndType(data, "image/*");

@@ -1,6 +1,7 @@
 package com.sc4ever.bornali;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,16 +22,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     private List<CardStyle> cardList;
     private Context mContext;
-    public CardAdapter(List<CardStyle> cardList, Context mContext) {
+    CardAdapter(List<CardStyle> cardList, Context mContext) {
         this.cardList = cardList;
         this.mContext = mContext;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView cardText;
-        public ImageView cardImage;
+        TextView cardText;
+        ImageView cardImage;
         public RelativeLayout cardRow ;
-        public ViewHolder(View view){
+        ViewHolder(View view){
             super(view);
             cardText = view.findViewById(R.id.card_title);
             cardImage = view.findViewById(R.id.card_image);
@@ -56,6 +57,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         CardStyle card = cardList.get(position);
         holder.cardText.setText(card.getCardText());
-        Glide.with(mContext).load(card.getCardImage()).into(holder.cardImage);
+        if(card.getCardURI().equals("")){
+            Glide.with(mContext).load(card.getCardImage()).into(holder.cardImage);
+        } else {
+            Uri uri = Uri.parse(card.getCardURI());
+            Glide.with(mContext).load(uri).into(holder.cardImage);
+        }
     }
 }

@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 public class CardStyle implements Parcelable {
     private int cardImage;
+    private String cardURI;
     private String cardText;
 
     @Override
@@ -15,6 +16,7 @@ public class CardStyle implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(cardImage);
         parcel.writeString(cardText);
+        parcel.writeString(cardURI);
     }
     public static final Creator<CardStyle> CREATOR = new Creator<CardStyle>() {
         @Override
@@ -30,25 +32,29 @@ public class CardStyle implements Parcelable {
     private CardStyle(Parcel in) {
         cardImage = in.readInt();
         cardText = in.readString();
+        cardURI = in.readString();
     }
-    public CardStyle(int cardImage, String cardText) {
+    CardStyle(int cardImage, String cardText) {
         this.cardImage = cardImage;
         this.cardText = cardText;
+        this.cardURI = "";
     }
 
-    public int getCardImage() {
+    CardStyle(String cardURI, String cardText) {
+        this.cardURI = cardURI;
+        this.cardText = cardText;
+        this.cardImage = -1;
+    }
+
+    int getCardImage() {
         return cardImage;
     }
 
-    public void setCardImage(int cardImage) {
-        this.cardImage = cardImage;
-    }
-
-    public String getCardText() {
+    String getCardText() {
         return cardText;
     }
 
-    public void setCardText(String cardText) {
-        this.cardText = cardText;
+    String getCardURI() {
+        return cardURI;
     }
 }
