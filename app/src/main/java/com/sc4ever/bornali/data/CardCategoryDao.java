@@ -12,9 +12,12 @@ import java.util.List;
 @Dao
 public interface CardCategoryDao {
     //getting all the cards of a single categories
-    //-1 is used to load all the categories
-    @Query("Select * from card_categories where part_of_id = :id")
-    LiveData<List<CardCategory>> getAllCards(int id);
+    //0 is used to load all the categories
+    @Query("select * from card_categories where part_of_id = :id")
+    List<CardCategory> getAllCards(int id);
+    //for incrementing card index
+    @Query("select count(*) from card_categories where part_of_id = :id")
+    int getAllCardCount(int id);
     @Insert
     void insertCardCategory(CardCategory cardCategory);
     @Update

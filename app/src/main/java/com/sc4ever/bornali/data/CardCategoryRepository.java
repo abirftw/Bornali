@@ -2,9 +2,6 @@ package com.sc4ever.bornali.data;
 
 import android.content.Context;
 import android.os.AsyncTask;
-
-import androidx.lifecycle.LiveData;
-
 import java.util.List;
 
 /*
@@ -40,9 +37,27 @@ public class CardCategoryRepository {
             }
         }.execute();
     }
-    public LiveData<List<CardCategory>> getAllCards(int id){
-        //for a single category, -1 is used to load all the category
+    public List<CardCategory> getAllCardsByID(int id){
         return appDatabase.cardCategoryDao().getAllCards(id);
     }
+    public void updateCard(String cardText, String cardURI, int id, int partOFID){
+        CardCategory cardCategory = new CardCategory();
+        cardCategory.setPartOFID(partOFID);
+        cardCategory.setID(id);
+        cardCategory.setText(cardText);
+        cardCategory.setImgURI(cardURI);
+        updateCard(cardCategory);
 
+    }
+    private void updateCard(final CardCategory cardCategory){
+        //execute the update operation in the background
+        // TODO implement static Async
+        new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                appDatabase.cardCategoryDao().updateCardCategory(cardCategory);
+                return null;
+            }
+        }.execute();
+    }
 }
