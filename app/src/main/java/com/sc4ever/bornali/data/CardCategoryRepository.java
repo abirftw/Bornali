@@ -13,14 +13,13 @@ public class CardCategoryRepository {
     public CardCategoryRepository(Context context){
         appDatabase = AppDatabase.getDatabaseInstance(context);
     }
-    public void insertCard(String cardText, String URI){
-        insertCard(cardText, URI, 0); //If a card is a category and thus isn't part of
+    public void insertCard(int id, String cardText, String URI){
+        insertCard(id, cardText, URI, 0); //If a card is a category and thus isn't part of
                                                 //any category
     }
-    public void insertCard(String cardText, String URI, int partOFID){
+    public void insertCard(int id, String cardText, String URI, int partOFID){
         CardCategory cardCategory = new CardCategory();
-        cardCategory.setID(CardCategory.getCardCount());
-        CardCategory.increment();
+        cardCategory.setID(id);
         cardCategory.setPartOFID(partOFID);
         cardCategory.setImgURI(URI);
         cardCategory.setText(cardText);
@@ -60,4 +59,8 @@ public class CardCategoryRepository {
             }
         }.execute();
     }
+    public int getAllCardCount(){
+        return appDatabase.cardCategoryDao().getAllCardCount();
+    }
+
 }

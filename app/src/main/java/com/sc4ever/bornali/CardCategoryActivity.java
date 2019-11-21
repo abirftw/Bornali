@@ -1,17 +1,15 @@
 package com.sc4ever.bornali;
 
-import
-        android.app.Activity;
+
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Parcelable;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,53 +27,34 @@ public class CardCategoryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CardAdapter cardAdapter;
     private ArrayList<CardStyle> cardStyleList;
+    private static final int RESULT_LOAD_CARD = 1;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        prepareCards();
         recyclerView = findViewById(R.id.rv_card_category);
         cardStyleList = new ArrayList<>();
         cardAdapter = new CardAdapter(cardStyleList, this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
-        //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(cardAdapter);
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 Intent intent = new Intent("com.sc4ever.bornali.CardListActivity");
-                switch (position){
-                    case 0:
-                        cardStyleList.clear();
-                        intent.putExtra("cardTitle", "A");
-                        cat01();
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                }
-                intent.putParcelableArrayListExtra("cardList", cardStyleList);
+                intent.putExtra("Title", cardStyleList.get(position).getCardText());
+                intent.putExtra("ID", cardStyleList.get(position).getCardID());
                 startActivity(intent);
             }
         });
-        prepareCards();
-    }
-    private void cat01()
-    {
-        cardStyleList.add(new CardStyle(R.drawable.rsz_sleep, "Sleep"));
     }
     private void prepareCards(){
-        AsyncUpdateList x = new AsyncUpdateList();
-        x.execute();
-        cardStyleList.add(new CardStyle(R.drawable.flash23, "Category A"));
-        cardStyleList.add(new CardStyle(R.drawable.logo, "Category B"));
-        cardStyleList.add(new CardStyle(R.drawable.rsz_caretaker, "Category C"));
-        cardStyleList.add(new CardStyle(R.drawable.rsz_sleep, "Category D"));
-
+       AsyncUpdateList updateList = new AsyncUpdateList();
+       updateList.execute("0");
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -100,24 +79,44 @@ public class CardCategoryActivity extends AppCompatActivity {
             Intent intent = new Intent(CardCategoryActivity.this, HelpPageActivity.class) ;
             startActivity(intent);
         } else if(id == R.id.action_add_category){
-            Intent intent = new Intent(CardCategoryActivity.this, AddCardActivity.class) ;
-            startActivity(intent);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(CardCategoryActivity.this,
+                            AddCardActivity.class) ;
+                    final CardCategoryRepository repository = new
+                            CardCategoryRepository(getApplicationContext());
+                    int catCount = repository.getAllCardCount();
+                    intent.putExtra("CatCount", catCount);
+                    intent.putExtra("partOF", 0);
+                    startActivityForResult(intent, RESULT_LOAD_CARD);
+                }
+            }).start();
         }
 
         return super.onOptionsItemSelected(item);
     }
-    private class AsyncUpdateList extends AsyncTask<Void, Void, Void>{
+    private class AsyncUpdateList extends AsyncTask<String, Void, Void>{
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected Void doInBackground(String... strings) {
             final CardCategoryRepository repository = new
                     CardCategoryRepository(getApplicationContext());
             final List<CardCategory> cardCategories;
-            cardCategories = repository.getAllCardsByID(0);
+            cardCategories = repository.getAllCardsByID(Integer.parseInt(strings[0]));
             for (CardCategory cardCategory : cardCategories){
-                Log.d("Path", cardCategory.getImgURI());
-                cardStyleList.add(new CardStyle(cardCategory.getImgURI(), cardCategory.getText()));
+                cardStyleList.add(new CardStyle(cardCategory.getID(),
+                        cardCategory.getImgURI(), cardCategory.getText()));
             }
             return null;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RESULT_LOAD_CARD){
+            prepareCards();
+            cardAdapter.notifyDataSetChanged();
         }
     }
 }

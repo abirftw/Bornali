@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class CardStyle implements Parcelable {
+    private int cardID;
     private int cardImage;
     private String cardURI;
     private String cardText;
@@ -14,6 +15,7 @@ public class CardStyle implements Parcelable {
     }
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(cardID);
         parcel.writeInt(cardImage);
         parcel.writeString(cardText);
         parcel.writeString(cardURI);
@@ -30,17 +32,20 @@ public class CardStyle implements Parcelable {
         }
     };
     private CardStyle(Parcel in) {
+        cardID = in.readInt();
         cardImage = in.readInt();
         cardText = in.readString();
         cardURI = in.readString();
     }
-    CardStyle(int cardImage, String cardText) {
+    CardStyle(int cardID, int cardImage, String cardText) {
+        this.cardID = cardID;
         this.cardImage = cardImage;
         this.cardText = cardText;
         this.cardURI = "";
     }
 
-    CardStyle(String cardURI, String cardText) {
+    CardStyle(int cardID, String cardURI, String cardText) {
+        this.cardID = cardID;
         this.cardURI = cardURI;
         this.cardText = cardText;
         this.cardImage = -1;
@@ -56,5 +61,9 @@ public class CardStyle implements Parcelable {
 
     String getCardURI() {
         return cardURI;
+    }
+
+    public int getCardID() {
+        return cardID;
     }
 }

@@ -21,15 +21,6 @@ public class CustomViewActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         listener();
 
-        Button HomePageBtn = findViewById(R.id.GoTohomePageBtn) ;
-        HomePageBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CustomViewActivity.this, HomePageActivity.class) ;
-                startActivity(intent);
-            }
-        });
-
     }
 
     private void listener(){

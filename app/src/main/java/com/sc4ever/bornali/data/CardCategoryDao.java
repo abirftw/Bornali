@@ -16,8 +16,8 @@ public interface CardCategoryDao {
     @Query("select * from card_categories where part_of_id = :id")
     List<CardCategory> getAllCards(int id);
     //for incrementing card index
-    @Query("select count(*) from card_categories where part_of_id = :id")
-    int getAllCardCount(int id);
+    @Query("select count(*) from card_categories")
+    int getAllCardCount();
     @Insert
     void insertCardCategory(CardCategory cardCategory);
     @Update

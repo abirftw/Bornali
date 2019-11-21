@@ -1,6 +1,7 @@
 package com.sc4ever.bornali;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.SQLException;
@@ -32,6 +33,7 @@ public class AddCardActivity extends AppCompatActivity {
     private Button saveButton;
     private EditText textDescription;
     private Uri imageUri;
+    private int catCount = 0;
     private static final int PERMISSION_REQUEST = 0;
     private static final int RESULT_LOAD_IMAGE = 1;
 
@@ -42,6 +44,7 @@ public class AddCardActivity extends AppCompatActivity {
         saveButton =  findViewById(R.id.buttonSave);
         cardImage = findViewById(R.id.imageView101);
         textDescription = findViewById(R.id.editText);
+        catCount = getIntent().getIntExtra("CatCount", 0);
         final CardCategoryRepository newCardCategoryRepository = new CardCategoryRepository(getApplicationContext());
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -60,8 +63,10 @@ public class AddCardActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                try {
-                   newCardCategoryRepository.updateCard(textDescription.getText().toString(),
-                           imageUri.toString(), 0 , 0);
+                  newCardCategoryRepository.insertCard(
+                          catCount,
+                          textDescription.getText().toString(), imageUri.toString(),
+                          getIntent().getIntExtra("partOF", 0));
                } catch (SQLException e){
                    e.printStackTrace();
                    Toast.makeText(getApplicationContext(),  R.string.category_error,
@@ -69,6 +74,7 @@ public class AddCardActivity extends AppCompatActivity {
                } finally {
                    Toast.makeText(getApplicationContext(), R.string.category_success,
                            Toast.LENGTH_LONG).show();
+                   setResult(Activity.RESULT_OK, new Intent());
                    finish();
                }
 
@@ -103,7 +109,7 @@ public class AddCardActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     void uploadPhoto() {
-        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+        Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         File pictureDirectory = Environment.getDataDirectory();
         String pictureDirectoryPath = pictureDirectory.getPath();
         Uri data = Uri.parse(pictureDirectoryPath);
