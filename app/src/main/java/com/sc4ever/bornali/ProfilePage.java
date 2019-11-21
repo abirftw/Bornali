@@ -49,8 +49,8 @@ public class ProfilePage extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST);
         }
 
-        imageProfile = (ImageView) findViewById(R.id.profilePhoto);
-        buttonProfile = (Button) findViewById(R.id.upload);
+        imageProfile = findViewById(R.id.profilePhoto);
+        buttonProfile = findViewById(R.id.upload);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +62,7 @@ public class ProfilePage extends AppCompatActivity {
 
 
     void uploadPhoto() {
-        Intent i = new Intent(Intent.ACTION_PICK);
+        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
         File pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         String pictureDirectoryPath = pictureDirectory.getPath();
         Uri data = Uri.parse(pictureDirectoryPath);
@@ -83,6 +83,7 @@ public class ProfilePage extends AppCompatActivity {
             if(requestCode == RESULT_LOAD_IMAGE)
             {
                 Uri imageUri = data.getData();
+                assert imageUri != null;
                 InputStream inputStream;
 
                 try {

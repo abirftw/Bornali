@@ -12,7 +12,6 @@
     <string name="title_activity_help_page">helpPage</string>
     <string name="title_card_category">Categories</string>
 
-
     <string name="helpPage_momBtn">Mom</string>
     <string name="helpPage_foodBtn">Food</string>
     <string name="helpPage_waterBtn">Water</string>
@@ -29,6 +28,7 @@
     <string name="card_action">Learn</string>
     <string name="practice_action">Practice</string>
     <string name="add_category_action">Add Category</string>
+    <string name="add_card_action">Add Card</string>
 
     <string name="title_activity_puzzle_menu_page">PuzzleMenuPage</string>
 
